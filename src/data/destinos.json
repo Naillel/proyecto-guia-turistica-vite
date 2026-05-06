@@ -1,0 +1,50 @@
+{
+  "destinos": [
+    {
+      "id": "Puntarenas-002",
+      "nombre": "Cobano",
+      "region": "Pacifico Central",
+      "descripcion": "Parque Nacional Cabo Blanco",
+      "imagen_portada": "assets/img/suecos1.jpg",
+      "galeria": [
+        "assets/img/suecos1.jpg",
+        "assets/img/suecos2.jpg",
+        "assets/img/suecos3.jpg"
+      ],
+      "audio": "assets/audio/cahuita-guia.mp3",
+      "video": "assets/video/suecos1.mp4",
+      "actividades": [
+        "Snorkel",
+        "Sunset",
+        "Observación de fauna",
+        "Observación de flora",
+        "Recreacion"
+      ],
+      "lat": 9.7369,
+      "lng": -82.8411
+    },
+    {
+      "id": "Volcan Tenorio-004",
+      "nombre": "Rio Celeste",
+      "region": "Huetar Norte",
+      "descripcion": "Parque Nacional Volcán Tenorio",
+      "imagen_portada": "assets/img/rioceleste1.jpg",
+      "galeria": [
+        "assets/img/rioceleste1.jpg",
+        "assets/img/rioceleste2.jpg",
+        "assets/img/rioceleste3.jpg"
+      ],
+      "audio": "assets/audio/riocelesteguia.mp3",
+      "video": "assets/video/rioceleste.mp4",
+      "actividades": [
+        "Ríos",
+        "Sunset",
+        "Observación de fauna",
+        "Observación de flora",
+        "Senderismo"
+      ],
+      "lat": 9.7369,
+      "lng": -82.8411
+    }
+  ]
+}

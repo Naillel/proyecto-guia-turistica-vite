@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "pnpx vite --root src/ --port 1234"
+    "dev": "pnpx vite --root src/ --port 1234",
+    "deploy": "gh-pages -d src/ --no-history"
   },
   "keywords": [],
   "author": "Naillel",
@@ -13,6 +14,7 @@
   "packageManager": "pnpm@10.32.1",
   "type": "module",
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "vite": "^8.0.10"
   }
 }
