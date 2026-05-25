@@ -27,7 +27,7 @@
       "id": "Volcan Tenorio-004",
       "nombre": "Rio Celeste",
       "region": "Huetar Norte",
-      "descripcion": "Parque Nacional Volcán Tenorio",
+      "descripcion": "Uno de los fenómenos naturales más asombrosos de Costa Rica: un río de color turquesa intenso producido por una reacción química única entre dos ríos volcánicos. Un destino que combina la magia del agua turquesa con la biodiversidad exuberante del bosque tropical.",
       "imagen_portada": "assets/img/rioceleste1.jpg",
       "galeria": [
         "assets/img/rioceleste1.jpg",
@@ -43,8 +43,96 @@
         "Observación de flora",
         "Senderismo"
       ],
-      "lat": 9.7369,
-      "lng": -82.8411
+      "lat": 9.71543,
+      "lng": -84.98734
+    },
+    {
+      "id": "caribe-003",
+      "nombre": "Tortuguero",
+      "region": "Huetar Caribe",
+      "descripcion": "Uno de los destinos más únicos de Costa Rica, accesible únicamente por bote o avioneta. Sus canales navegables forman un laberinto natural de biodiversidad extraordinaria. Reconocido como sitio de anidación de tortugas marinas.",
+      "imagen_portada": "assets/img/tortugueroPortada.jpg",
+      "galeria": [
+        "assets/img/tortuguero1.jpg",
+        "assets/img/tortuguero2.jpg",
+        "assets/img/tortuguero3.jpg"
+      ],
+      "audio": "assets/audio/tortugueroguia.mp3",
+      "video": "assets/video/tortuguero.mp4",
+      "actividades": [
+        "Tour en bote por los canales",
+        "Avistamiento de tortugas",
+        "Observación de aves",
+        "Senderismo"
+      ],
+      "lat": 10.5432,
+      "lng": -83.5016
+    },
+    {
+      "id": "Central-001",
+      "nombre": "Parque nacional los quetzales",
+      "region": "Central",
+      "descripcion": "Uno de los mejores lugares del país para avistar al majestuoso quetzal, rodeado de paisajes fríos y una naturaleza que parece de otro mundo.",
+      "imagen_portada": "assets/img/quetzales1.jpg",
+      "galeria": [
+        "assets/img/quetzales1.jpg",
+        "assets/img/quetzales2.jpg",
+        "assets/img/quetzales3.jpg"
+      ],
+      "audio": "assets/audio/quetzalesguia.mp3",
+      "video": "assets/video/quetzales.mp4",
+      "actividades": [
+        "Observación de aves",
+        "Senderismo",
+        "Observación de flora"
+      ],
+      "lat": 9.60893,
+      "lng": -83.82232
+    },
+    {
+      "id": "Chorotega-001",
+      "nombre": "Las Pumas",
+      "region": "Chorotega",
+      "descripcion": "Centro de Rescate dedicado al cuidado, rehabilitación y liberación de animales silvestres. Un santuario donde la conservación cobra vida, brindando a miles de visitantes una experiencia educativa única sobre la fauna silvestre de Costa Rica.",
+      "imagen_portada": "assets/img/laspumas1.jpg",
+      "galeria": [
+        "assets/img/laspumas1.jpg",
+        "assets/img/laspumas2.jpg",
+        "assets/img/laspumas3.jpg"
+      ],
+      "audio": "assets/audio/laspumasguia.mp3",
+      "video": "assets/video/laspumas.mp4",
+      "actividades": [
+        "Observación de fauna",
+        "Educación ambiental",
+        "Fotografía de naturaleza",
+        "Turismo familiar"
+      ],
+      "lat": 10.45350,
+      "lng": -85.12500
+    },
+    {
+      "id": "Puntarenas-001",
+      "nombre": "Isla San Lucas",
+      "region": "Pacífico Central",
+      "descripcion": "Una isla cargada de historia y naturaleza en el corazón del Golfo de Nicoya. Antiguo presidio declarado patrimonio histórico arquitectónico, hoy convertido en parque nacional donde la selva recupera lo que el tiempo dejó atrás. Sus playas, arrecifes y bosques caducifolios albergan una biodiversidad sorprendente, mientras sus ruinas y grafitis cuentan en silencio las historias de quienes vivieron entre sus muros.",
+      "imagen_portada": "assets/img/islasanlucas1.jpg",
+      "galeria": [
+        "assets/img/islasanlucas1.jpg",
+        "assets/img/islasanlucas2.jpg",
+        "assets/img/islasanlucas3.jpg"
+      ],
+      "audio": "assets/audio/islasanlucasguia.mp3",
+      "video": "assets/video/islasanlucas.mp4",
+      "actividades": [
+        "Turismo histórico",
+        "Senderismo",
+        "Observación de fauna",
+        "Observación de flora",
+        "Fotografía de naturaleza"
+      ],
+      "lat": 9.94108,
+      "lng": -84.90681
     }
   ]
 }
