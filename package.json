@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "pnpx vite --root src/ --port 1234",
+    "dev": "pnpx vite src/ --port 1234",
     "deploy": "gh-pages -d src/ --no-history"
   },
   "keywords": [],

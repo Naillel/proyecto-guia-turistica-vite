@@ -1,18 +1,40 @@
 {
   "destinos": [
     {
-      "id": "Puntarenas-002",
-      "nombre": "Cobano",
-      "region": "Pacifico Central",
-      "descripcion": "Parque Nacional Cabo Blanco",
-      "imagen_portada": "assets/img/suecos1.jpg",
+      "id": "Cahuita-001",
+      "nombre": "Cahuita",
+      "region": "Huetar Atlantica",
+      "descripcion": "Parque Nacional Cahuita",
+      "imagen_portada": "assets/img/cahuita-1.png",
       "galeria": [
-        "assets/img/suecos1.jpg",
-        "assets/img/suecos2.jpg",
-        "assets/img/suecos3.jpg"
+        "assets/img/cahuita-1.png",
+        "assets/img/cahuita-2.png",
+        "assets/img/cahuita-3.png"
       ],
       "audio": "assets/audio/cahuita-guia.mp3",
-      "video": "assets/video/suecos1.mp4",
+      "video": "assets/video/cahuita.mp4",
+      "actividades": [
+        "Snorkel",
+        "Senderismo",
+        "Observación de fauna",
+        "Playa"
+      ],
+      "lat": 9.7369,
+      "lng": -82.8411
+    },
+    {
+      "id": "Puntarenas-002",
+      "nombre": "Cobano (Montezuma)",
+      "region": "Pacifico Central",
+      "descripcion": "Parque Nacional Cabo Blanco y Cataratas",
+      "imagen_portada": "assets/img/Montezuma-1.png",
+      "galeria": [
+        "assets/img/Montezuma-1.png",
+        "assets/img/Montezuma-2.png",
+        "assets/img/Montezuma-3.png"
+      ],
+      "audio": "assets/audio/montezuma-guia.mp3",
+      "video": "assets/video/montezuma.mp4",
       "actividades": [
         "Snorkel",
         "Sunset",
@@ -20,19 +42,41 @@
         "Observación de flora",
         "Recreacion"
       ],
-      "lat": 9.7369,
-      "lng": -82.8411
+      "lat": 9.6503,
+      "lng": -85.0689
+    },
+    {
+      "id": "Cartago-003",
+      "nombre": "Orosi",
+      "region": "Valle Central",
+      "descripcion": "Valle de Orosi e Iglesia Colonial",
+      "imagen_portada": "assets/img/orosi-1.png",
+      "galeria": [
+        "assets/img/orosi-1.png",
+        "assets/img/orosi-2.png",
+        "assets/img/orosi-3.png"
+      ],
+      "audio": "",
+      "video": "",
+      "actividades": [
+        "Turismo histórico",
+        "Aguas termales",
+        "Fotografía",
+        "Recreacion"
+      ],
+      "lat": 9.7964,
+      "lng": -83.8542
     },
     {
       "id": "Volcan Tenorio-004",
-      "nombre": "Rio Celeste",
+      "nombre": "Catarata Rio Celeste",
       "region": "Huetar Norte",
       "descripcion": "Parque Nacional Volcán Tenorio",
-      "imagen_portada": "assets/img/rioceleste1.jpg",
+      "imagen_portada": "assets/img/Rio_celeste-1.png",
       "galeria": [
-        "assets/img/rioceleste1.jpg",
-        "assets/img/rioceleste2.jpg",
-        "assets/img/rioceleste3.jpg"
+        "assets/img/Rio_celeste-1.png",
+        "assets/img/Rio_celeste-2.png",
+        "assets/img/Rio_celeste-3.png"
       ],
       "audio": "assets/audio/riocelesteguia.mp3",
       "video": "assets/video/rioceleste.mp4",
@@ -43,8 +87,93 @@
         "Observación de flora",
         "Senderismo"
       ],
-      "lat": 9.7369,
-      "lng": -82.8411
+      "lat": 10.7167,
+      "lng": -85.0167
+    },
+    {
+      "id": "Chorotega-005",
+      "nombre": "Virador",
+      "region": "Chorotega",
+      "descripcion": "Playa Virador en Península de Papagayo",
+      "imagen_portada": "assets/img/virador-1.png",
+      "galeria": [
+        "assets/img/virador-1.png",
+        "assets/img/virador-2.png",
+        "assets/img/virador-3.png"
+      ],
+      "audio": "",
+      "video": "",
+      "actividades": [
+        "Playa",
+        "Sunset",
+        "Natación",
+        "Relajación"
+      ],
+      "lat": 10.6412,
+      "lng": -85.6631
+    },
+    {
+      "id": "Osa-006",
+      "nombre": "Bahía Drake",
+      "region": "Pacifico Sur",
+      "descripcion": "Ecoturismo y cercanía al P.N. Corcovado",
+      "imagen_portada": "assets/img/Bahia_drake-1.png",
+      "galeria": [
+        "assets/img/Bahia_drake-1.png",
+        "assets/img/Bahia_drake-2.png",
+        "assets/img/Bahia_drake-3.png"
+      ],
+      "audio": "",
+      "video": "",
+      "actividades": [
+        "Tour en bote",
+        "Ecoturismo",
+        "Observación de fauna"
+      ],
+      "lat": 8.6872,
+      "lng": -83.6644
+    },
+    {
+      "id": "Limon-007",
+      "nombre": "Tortuguero",
+      "region": "Huetar Atlantica",
+      "descripcion": "Parque Nacional Tortuguero y canales",
+      "imagen_portada": "assets/img/Tortuguero-1.png",
+      "galeria": [
+        "assets/img/Tortuguero-1.png",
+        "assets/img/Tortuguero-2.png",
+        "assets/img/Tortuguero-3.png"
+      ],
+      "audio": "",
+      "video": "",
+      "actividades": [
+        "Tour en kayak",
+        "Canales",
+        "Observación de tortugas"
+      ],
+      "lat": 10.5394,
+      "lng": -83.5142
+    },
+    {
+      "id": "Monteverde-008",
+      "nombre": "Reserva Monteverde",
+      "region": "Pacifico Central",
+      "descripcion": "Reserva Biológica Bosque Nuboso Monteverde",
+      "imagen_portada": "assets/img/Monteverde-1.png",
+      "galeria": [
+        "assets/img/Monteverde-1.png",
+        "assets/img/Monteverde-2.png",
+        "assets/img/Monteverde-3.png"
+      ],
+      "audio": "",
+      "video": "",
+      "actividades": [
+        "Puentes colgantes",
+        "Canopy",
+        "Senderismo"
+      ],
+      "lat": 10.2750,
+      "lng": -84.8253
     }
   ]
 }
