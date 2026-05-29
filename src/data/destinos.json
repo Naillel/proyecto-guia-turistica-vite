@@ -23,157 +23,140 @@
       "lng": -82.8411
     },
     {
-      "id": "Puntarenas-002",
-      "nombre": "Cobano (Montezuma)",
-      "region": "Pacifico Central",
-      "descripcion": "Parque Nacional Cabo Blanco y Cataratas",
-      "imagen_portada": "assets/img/Montezuma-1.png",
-      "galeria": [
-        "assets/img/Montezuma-1.png",
-        "assets/img/Montezuma-2.png",
-        "assets/img/Montezuma-3.png"
-      ],
-      "audio": "assets/audio/montezuma-guia.mp3",
-      "video": "assets/video/montezuma.mp4",
-      "actividades": [
-        "Snorkel",
-        "Sunset",
-        "Observación de fauna",
-        "Observación de flora",
-        "Recreacion"
-      ],
-      "lat": 9.6503,
-      "lng": -85.0689
-    },
-    {
-      "id": "Cartago-003",
-      "nombre": "Orosi",
-      "region": "Valle Central",
-      "descripcion": "Valle de Orosi e Iglesia Colonial",
-      "imagen_portada": "assets/img/orosi-1.png",
-      "galeria": [
-        "assets/img/orosi-1.png",
-        "assets/img/orosi-2.png",
-        "assets/img/orosi-3.png"
-      ],
-      "audio": "",
-      "video": "",
-      "actividades": [
-        "Turismo histórico",
-        "Aguas termales",
-        "Fotografía",
-        "Recreacion"
-      ],
-      "lat": 9.7964,
-      "lng": -83.8542
-    },
-    {
-      "id": "Volcan Tenorio-004",
-      "nombre": "Catarata Rio Celeste",
+      "id": "norte-001",
+      "nombre": "Río Celeste",
       "region": "Huetar Norte",
-      "descripcion": "Parque Nacional Volcán Tenorio",
-      "imagen_portada": "assets/img/Rio_celeste-1.png",
+      "descripcion": "El Río Celeste es uno de los fenómenos naturales más extraordinarios del planeta. Su color azul intenso no es pigmento ni alga: es el resultado de la dispersión de Mie, un proceso óptico que ocurre cuando dos ríos con distinta carga mineral se fusionan al pie del volcán Tenorio. El Parque Nacional que lo protege alberga dantas, jaguares y más de 300 especies de aves.",
+      "imagen_portada": "assets/img/rio-celeste.jpg",
       "galeria": [
-        "assets/img/Rio_celeste-1.png",
-        "assets/img/Rio_celeste-2.png",
-        "assets/img/Rio_celeste-3.png"
+        "assets/img/rio-celeste-01.jpg",
+        "assets/img/rio-celeste-02.jpg",
+        "assets/img/rio-celeste-03.jpg"
       ],
-      "audio": "assets/audio/riocelesteguia.mp3",
-      "video": "assets/video/rioceleste.mp4",
-      "actividades": [
-        "Ríos",
-        "Sunset",
-        "Observación de fauna",
-        "Observación de flora",
-        "Senderismo"
-      ],
-      "lat": 10.7167,
+      "audio": "assets/audio/rio-celeste-guia.mp3",
+      "video": "assets/video/rio-celeste.mp4",
+      "actividades": ["Senderismo", "Fotografía de naturaleza", "Observación de aves", "Baño en pozas"],
+      "lat": 10.7000,
       "lng": -85.0167
     },
     {
-      "id": "Chorotega-005",
-      "nombre": "Virador",
-      "region": "Chorotega",
-      "descripcion": "Playa Virador en Península de Papagayo",
-      "imagen_portada": "assets/img/virador-1.png",
+      "id": "norte-002",
+      "nombre": "Quebrada Gata",
+      "region": "Huetar Norte",
+      "descripcion": "Quebrada Gata representa el bosque lluvioso de bajura en su estado más prístino dentro de la región norte. Este afluente corre entre selva densa de llanura con una biodiversidad de sotobosque que incluye anfibios endémicos y orquídeas silvestres. Su relativo aislamiento lo convierte en un destino auténtico para el ecoturismo científico en Venecia de San Carlos.",
+      "imagen_portada": "assets/img/quebrada-gata.jpg",
       "galeria": [
-        "assets/img/virador-1.png",
-        "assets/img/virador-2.png",
-        "assets/img/virador-3.png"
+        "assets/img/quebrada-gata-01.jpg",
+        "assets/img/quebrada-gata-02.jpg",
+        "assets/img/quebrada-gata-03.jpg"
       ],
-      "audio": "",
-      "video": "",
-      "actividades": [
-        "Playa",
-        "Sunset",
-        "Natación",
-        "Relajación"
-      ],
-      "lat": 10.6412,
-      "lng": -85.6631
+      "audio": "assets/audio/quebrada-gata-guia.mp3",
+      "video": "assets/video/quebrada-gata.mp4",
+      "actividades": ["Senderismo", "Observación de anfibios", "Fotografía botánica", "Natación en río"],
+      "lat": 10.3748,
+      "lng": -84.3156
     },
     {
-      "id": "Osa-006",
-      "nombre": "Bahía Drake",
-      "region": "Pacifico Sur",
-      "descripcion": "Ecoturismo y cercanía al P.N. Corcovado",
-      "imagen_portada": "assets/img/Bahia_drake-1.png",
-      "galeria": [
-        "assets/img/Bahia_drake-1.png",
-        "assets/img/Bahia_drake-2.png",
-        "assets/img/Bahia_drake-3.png"
-      ],
-      "audio": "",
-      "video": "",
-      "actividades": [
-        "Tour en bote",
-        "Ecoturismo",
-        "Observación de fauna"
-      ],
-      "lat": 8.6872,
-      "lng": -83.6644
-    },
-    {
-      "id": "Limon-007",
+      "id": "caribe-001",
       "nombre": "Tortuguero",
-      "region": "Huetar Atlantica",
-      "descripcion": "Parque Nacional Tortuguero y canales",
-      "imagen_portada": "assets/img/Tortuguero-1.png",
+      "region": "Huetar Caribe",
+      "descripcion": "Tortuguero es uno de los sitios de anidación de tortuga verde más importantes del mundo. Cada año, entre julio y octubre, miles de hembras emergen del Atlántico para desovar en la misma playa donde nacieron décadas atrás. Sus canales albergan manatíes, caimanes y más de 400 especies de aves en una red hidrológica que solo puede recorrerse en bote.",
+      "imagen_portada": "assets/img/tortuguero.jpg",
       "galeria": [
-        "assets/img/Tortuguero-1.png",
-        "assets/img/Tortuguero-2.png",
-        "assets/img/Tortuguero-3.png"
+        "assets/img/tortuguero-01.jpg",
+        "assets/img/tortuguero-02.jpg",
+        "assets/img/tortuguero-03.jpg"
       ],
-      "audio": "",
-      "video": "",
-      "actividades": [
-        "Tour en kayak",
-        "Canales",
-        "Observación de tortugas"
-      ],
-      "lat": 10.5394,
-      "lng": -83.5142
+      "audio": "assets/audio/tortuguero-guia.mp3",
+      "video": "assets/video/tortuguero.mp4",
+      "actividades": ["Avistamiento de tortugas", "Tour en canoa", "Observación de aves", "Avistamiento de manatíes"],
+      "lat": 10.5392,
+      "lng": -83.5028
     },
     {
-      "id": "Monteverde-008",
-      "nombre": "Reserva Monteverde",
-      "region": "Pacifico Central",
-      "descripcion": "Reserva Biológica Bosque Nuboso Monteverde",
-      "imagen_portada": "assets/img/Monteverde-1.png",
+      "id": "caribe-002",
+      "nombre": "Manzanillo",
+      "region": "Huetar Caribe",
+      "descripcion": "El Refugio Nacional Gandoca-Manzanillo protege el sistema arrecifal más extenso y mejor conservado de Costa Rica. Bajo sus aguas coexisten más de 30 especies de coral, tortugas carey y delfines nariz de botella. En tierra, el bosque costero alberga jaguares y tapires, creando una transición única entre el mar y la selva separados por apenas unos metros.",
+      "imagen_portada": "assets/img/manzanillo.jpg",
       "galeria": [
-        "assets/img/Monteverde-1.png",
-        "assets/img/Monteverde-2.png",
-        "assets/img/Monteverde-3.png"
+        "assets/img/manzanillo-01.jpg",
+        "assets/img/manzanillo-02.jpg",
+        "assets/img/manzanillo-03.jpg"
       ],
-      "audio": "",
-      "video": "",
-      "actividades": [
-        "Puentes colgantes",
-        "Canopy",
-        "Senderismo"
+      "audio": "assets/audio/manzanillo-guia.mp3",
+      "video": "assets/video/manzanillo.mp4",
+      "actividades": ["Snorkel", "Buceo", "Senderismo costero", "Avistamiento de delfines"],
+      "lat": 9.6314,
+      "lng": -82.6644
+    },
+    {
+      "id": "central-001",
+      "nombre": "Parque Los Quetzales",
+      "region": "Central",
+      "descripcion": "El Parque Nacional Los Quetzales protege el corredor de bosque nuboso más extenso de Costa Rica a lo largo de la Cordillera de Talamanca. Sus robledales de altura, cubiertos de musgo y bromeliáceas, son el hábitat crítico del quetzal resplendeciente. A más de 3.000 metros, la neblina es constante y la biodiversidad de flora es comparable a la de los Andes colombianos.",
+      "imagen_portada": "assets/img/parque-quetzales.jpg",
+      "galeria": [
+        "assets/img/parque-quetzales-01.jpg",
+        "assets/img/parque-quetzales-02.jpg",
+        "assets/img/parque-quetzales-03.jpg"
       ],
-      "lat": 10.2750,
-      "lng": -84.8253
+      "audio": "assets/audio/parque-quetzales-guia.mp3",
+      "video": "assets/video/parque-quetzales.mp4",
+      "actividades": ["Avistamiento de quetzales", "Senderismo de montaña", "Fotografía de vida silvestre", "Camping"],
+      "lat": 9.5833,
+      "lng": -83.7000
+    },
+    {
+      "id": "central-002",
+      "nombre": "Sanatorio Durán",
+      "region": "Central",
+      "descripcion": "Construido en 1915 en las faldas del volcán Irazú, el Sanatorio Durán fue escogido por su altitud: el aire frío del bosque nuboso era el tratamiento estándar para la tuberculosis en la medicina de la época. Hoy es un testigo material de cómo el ecosistema de altura moldeó decisiones humanas históricas, y uno de los destinos de turismo cultural más visitados de Cartago.",
+      "imagen_portada": "assets/img/sanatorio-duran.jpg",
+      "galeria": [
+        "assets/img/sanatorio-duran-01.jpg",
+        "assets/img/sanatorio-duran-02.jpg",
+        "assets/img/sanatorio-duran-03.jpg"
+      ],
+      "audio": "assets/audio/sanatorio-duran-guia.mp3",
+      "video": "assets/video/sanatorio-duran.mp4",
+      "actividades": ["Tour histórico", "Fotografía patrimonial", "Senderismo de altura", "Tour nocturno"],
+      "lat": 9.8167,
+      "lng": -83.9167
+    },
+    {
+      "id": "chorotega-001",
+      "nombre": "Ecomuseo de las Minas de Abangares",
+      "region": "Chorotega",
+      "descripcion": "El Ecomuseo de Abangares es un modelo de ecoturismo de base comunitaria. A finales del siglo XIX, compañías extranjeras explotaron el oro de estas montañas de bosque seco durante décadas. Hoy los propios descendientes de esos trabajadores administran el sitio, integrando senderos interpretativos en ecosistemas de bosque seco en regeneración con la memoria viva de la historia extractiva de la región.",
+      "imagen_portada": "assets/img/ecomuseo-abangares.jpg",
+      "galeria": [
+        "assets/img/ecomuseo-abangares-01.jpg",
+        "assets/img/ecomuseo-abangares-02.jpg",
+        "assets/img/ecomuseo-abangares-03.jpg"
+      ],
+      "audio": "assets/audio/ecomuseo-abangares-guia.mp3",
+      "video": "assets/video/ecomuseo-abangares.mp4",
+      "actividades": ["Tour comunitario", "Senderismo interpretativo", "Taller de historia ambiental", "Fotografía patrimonial"],
+      "lat": 10.2167,
+      "lng": -84.9833
+    },
+    {
+      "id": "chorotega-002",
+      "nombre": "Las Pumas",
+      "region": "Chorotega",
+      "descripcion": "El Centro de Rescate Las Pumas en Cañas alberga felinos rescatados como pumas, ocelotes, jaguarundis y margays que no pueden ser reintroducidos a la vida silvestre. Su valor ecoturístico radica en visibilizar la presión que el avance agrícola ejerce sobre los grandes carnívoros del Pacífico Seco, especie paraguas cuya desaparición desestabilizaría la cadena trófica del ecosistema completo.",
+      "imagen_portada": "assets/img/las-pumas.jpg",
+      "galeria": [
+        "assets/img/las-pumas-01.jpg",
+        "assets/img/las-pumas-02.jpg",
+        "assets/img/las-pumas-03.jpg"
+      ],
+      "audio": "assets/audio/las-pumas-guia.mp3",
+      "video": "assets/video/las-pumas.mp4",
+      "actividades": ["Avistamiento de felinos", "Educación ambiental", "Fotografía de fauna", "Tour guiado de conservación"],
+      "lat": 10.4358,
+      "lng": -85.1003
     }
   ]
 }
