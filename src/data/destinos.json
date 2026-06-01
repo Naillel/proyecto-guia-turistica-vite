@@ -3,8 +3,8 @@
     {
       "id": "Cahuita-001",
       "nombre": "Cahuita",
-      "region": "Huetar Atlántica",
-      "descripcion": "El Parque Nacional Cahuita alberga uno de los arrecifes de coral más importantes de Costa Rica. Sus aguas cristalinas y sus senderos costeros entre el bosque y el mar lo convierten en un destino imprescindible del Caribe sur.",
+      "region": "Huetar Atlantica",
+      "descripcion": "Un paraíso caribeño donde la selva tropical se encuentra con el mar cristalino. Cahuita es un pueblo tranquilo con un parque nacional que alberga playas vírgenes, arrecifes de coral y una biodiversidad increíble. Perfecto para los amantes del snorkel y la naturaleza en estado puro.",
       "imagen_portada": "assets/img/cahuita-1.png",
       "galeria": [
         "assets/img/cahuita-1.png",
@@ -14,28 +14,35 @@
       "audio": "assets/audio/cahuita-guia.mp3",
       "video": "assets/video/cahuita.mp4",
       "actividades": [
-        "Snorkel",
-        "Senderismo",
-        "Observación de fauna",
-        "Playa"
+        "Snorkel en el arrecife de coral",
+        "Caminatas por el Parque Nacional Cahuita",
+        "Avistamiento de perezosos y monos",
+        "Buceo en aguas cristalinas",
+        "Degustación de cocina afrocaribeña"
       ],
-      "lat": 9.7369,
-      "lng": -82.8411
+      "lat": 9.7319,
+      "lng": -82.8458
     },
     {
       "id": "norte-001",
       "nombre": "Río Celeste",
       "region": "Huetar Norte",
-      "descripcion": "El Río Celeste es uno de los fenómenos naturales más extraordinarios del planeta. Su color azul intenso no es pigmento ni alga: es el resultado de la dispersión de Mie, un proceso óptico que ocurre cuando dos ríos con distinta carga mineral se fusionan al pie del volcán Tenorio. El Parque Nacional que lo protege alberga dantas, jaguares y más de 300 especies de aves.",
+      "descripcion": "Un milagro de la naturaleza escondido en el corazón del volcán Tenorio. El Río Celeste sorprende con su agua de un increíble color azul turquesa, fruto del encuentro mágico de dos ríos al pie del volcán. Senderos entre bosque lluvioso, cataratas espectaculares y aguas termales hacen de este lugar uno de los rincones más fotografiados de Costa Rica.",
       "imagen_portada": "assets/img/rio-celeste.jpg",
       "galeria": [
         "assets/img/rio-celeste-01.jpg",
         "assets/img/rio-celeste-02.jpg",
         "assets/img/rio-celeste-03.jpg"
       ],
-      "audio": "assets/audio/rio-celeste-guia.mp3",
+      "audio": "assets/audio/rio-celeste-guia.mpeg",
       "video": "assets/video/rio-celeste.mp4",
-      "actividades": ["Senderismo", "Fotografía de naturaleza", "Observación de aves", "Baño en pozas"],
+      "actividades": [
+        "Caminata hasta la catarata celeste",
+        "Baño en aguas termales naturales",
+        "Observación de aves y dantas",
+        "Fotografía del fenómeno azul turquesa",
+        "Senderismo en el Parque Nacional Tenorio"
+      ],
       "lat": 10.7000,
       "lng": -85.0167
     },
@@ -43,16 +50,22 @@
       "id": "norte-002",
       "nombre": "Quebrada Gata",
       "region": "Huetar Norte",
-      "descripcion": "Quebrada Gata representa el bosque lluvioso de bajura en su estado más prístino dentro de la región norte. Este afluente corre entre selva densa de llanura con una biodiversidad de sotobosque que incluye anfibios endémicos y orquídeas silvestres. Su relativo aislamiento lo convierte en un destino auténtico para el ecoturismo científico en Venecia de San Carlos.",
+      "descripcion": "Una joya escondida entre la selva tropical de la zona norte. Quebrada Gata es un refugio natural en Venecia de San Carlos donde el bosque lluvioso se mantiene casi intacto. Sus aguas frescas, las pozas naturales y la abundante fauna del sotobosque la convierten en el destino ideal para quienes buscan aventura auténtica lejos del turismo masivo.",
       "imagen_portada": "assets/img/quebrada-gata.jpg",
       "galeria": [
         "assets/img/quebrada-gata-01.jpg",
         "assets/img/quebrada-gata-02.jpg",
         "assets/img/quebrada-gata-03.jpg"
       ],
-      "audio": "assets/audio/quebrada-gata-guia.mp3",
+      "audio": "assets/audio/quebrada-gata-guia.mpeg",
       "video": "assets/video/quebrada-gata.mp4",
-      "actividades": ["Senderismo", "Observación de anfibios", "Fotografía botánica", "Natación en río"],
+      "actividades": [
+        "Senderismo en bosque lluvioso",
+        "Baño en pozas naturales del río",
+        "Observación de ranas y anfibios endémicos",
+        "Fotografía de orquídeas silvestres",
+        "Turismo rural comunitario"
+      ],
       "lat": 10.3748,
       "lng": -84.3156
     },
@@ -60,16 +73,22 @@
       "id": "caribe-001",
       "nombre": "Tortuguero",
       "region": "Huetar Caribe",
-      "descripcion": "Tortuguero es uno de los sitios de anidación de tortuga verde más importantes del mundo. Cada año, entre julio y octubre, miles de hembras emergen del Atlántico para desovar en la misma playa donde nacieron décadas atrás. Sus canales albergan manatíes, caimanes y más de 400 especies de aves en una red hidrológica que solo puede recorrerse en bote.",
+      "descripcion": "Un santuario natural al que solo se llega en bote o avioneta. Tortuguero es famoso mundialmente por el desove de la tortuga verde entre julio y octubre, cuando miles de hembras llegan a la playa donde nacieron. Sus canales selváticos esconden caimanes, manatíes, perezosos y más de 400 especies de aves en uno de los ecosistemas más biodiversos del planeta.",
       "imagen_portada": "assets/img/tortuguero.jpg",
       "galeria": [
         "assets/img/tortuguero-01.jpg",
         "assets/img/tortuguero-02.jpg",
         "assets/img/tortuguero-03.jpg"
       ],
-      "audio": "assets/audio/tortuguero-guia.mp3",
+      "audio": "assets/audio/tortuguero-guia.mpeg",
       "video": "assets/video/tortuguero.mp4",
-      "actividades": ["Avistamiento de tortugas", "Tour en canoa", "Observación de aves", "Avistamiento de manatíes"],
+      "actividades": [
+        "Tour nocturno de desove de tortugas",
+        "Paseo en canoa por los canales selváticos",
+        "Avistamiento de manatíes y caimanes",
+        "Observación de aves tropicales",
+        "Visita al pueblo afrocaribeño de Tortuguero"
+      ],
       "lat": 10.5392,
       "lng": -83.5028
     },
@@ -77,16 +96,22 @@
       "id": "caribe-002",
       "nombre": "Manzanillo",
       "region": "Huetar Caribe",
-      "descripcion": "El Refugio Nacional Gandoca-Manzanillo protege el sistema arrecifal más extenso y mejor conservado de Costa Rica. Bajo sus aguas coexisten más de 30 especies de coral, tortugas carey y delfines nariz de botella. En tierra, el bosque costero alberga jaguares y tapires, creando una transición única entre el mar y la selva.",
+      "descripcion": "El Refugio Nacional Gandoca-Manzanillo protege el sistema arrecifal más extenso y mejor conservado de Costa Rica. Bajo sus aguas coexisten más de 30 especies de coral, tortugas carey y delfines nariz de botella. En tierra, el bosque costero alberga jaguares y tapires, creando una transición única entre el mar y la selva separados por apenas unos metros.",
       "imagen_portada": "assets/img/manzanillo.jpg",
       "galeria": [
         "assets/img/manzanillo-01.jpg",
         "assets/img/manzanillo-02.jpg",
         "assets/img/manzanillo-03.jpg"
       ],
-      "audio": "assets/audio/manzanillo-guia.mp3",
+      "audio": "assets/audio/manzanillo-guia.mpeg",
       "video": "assets/video/manzanillo.mp4",
-      "actividades": ["Snorkel", "Buceo", "Senderismo costero", "Avistamiento de delfines"],
+      "actividades": [
+        "Snorkel y buceo en el arrecife de coral",
+        "Avistamiento de delfines nariz de botella",
+        "Caminata por el sendero costero hasta Punta Mona",
+        "Kayak en aguas cristalinas",
+        "Degustación de cocina caribeña tradicional"
+      ],
       "lat": 9.6314,
       "lng": -82.6644
     },
@@ -94,16 +119,22 @@
       "id": "central-001",
       "nombre": "Parque Los Quetzales",
       "region": "Central",
-      "descripcion": "El Parque Nacional Los Quetzales protege el corredor de bosque nuboso más extenso de Costa Rica a lo largo de la Cordillera de Talamanca. Sus robledales de altura, cubiertos de musgo y bromeliáceas, son el hábitat crítico del quetzal resplendeciente. A más de 3.000 metros, la neblina es constante y la biodiversidad de flora es comparable a la de los Andes colombianos.",
+      "descripcion": "Un bosque nuboso mágico en las alturas de la Cordillera de Talamanca donde habita una de las aves más bellas del mundo: el quetzal resplandeciente. Entre robledales cubiertos de musgo, neblina constante y temperaturas frescas, este parque ofrece la mejor oportunidad para observar quetzales y disfrutar de paisajes de montaña a más de 2.600 metros de altura.",
       "imagen_portada": "assets/img/parque-quetzales.jpg",
       "galeria": [
         "assets/img/parque-quetzales-01.jpg",
         "assets/img/parque-quetzales-02.jpg",
         "assets/img/parque-quetzales-03.jpg"
       ],
-      "audio": "assets/audio/parque-quetzales-guia.mp3",
+      "audio": "assets/audio/parque-quetzales-guia.mpeg",
       "video": "assets/video/parque-quetzales.mp4",
-      "actividades": ["Avistamiento de quetzales", "Senderismo de montaña", "Fotografía de vida silvestre", "Camping"],
+      "actividades": [
+        "Avistamiento del quetzal resplandeciente",
+        "Senderismo en bosque nuboso",
+        "Fotografía de aves de montaña",
+        "Tour guiado por robledales centenarios",
+        "Camping en altura"
+      ],
       "lat": 9.5833,
       "lng": -83.7000
     },
@@ -111,16 +142,22 @@
       "id": "central-002",
       "nombre": "Sanatorio Durán",
       "region": "Central",
-      "descripcion": "Construido en 1915 en las faldas del volcán Irazú, el Sanatorio Durán fue escogido por su altitud: el aire frío del bosque nuboso era el tratamiento estándar para la tuberculosis. Hoy es un testigo material de cómo el ecosistema de altura moldeó decisiones humanas históricas, y uno de los destinos de turismo cultural más visitados de Cartago.",
+      "descripcion": "Construido en 1915 en las faldas del volcán Irazú, el Sanatorio Durán fue escogido por su altitud: el aire frío del bosque nuboso era el tratamiento estándar para la tuberculosis en la medicina de la época. Hoy es un testigo material de cómo el ecosistema de altura moldeó decisiones humanas históricas, y uno de los destinos de turismo cultural más visitados de Cartago.",
       "imagen_portada": "assets/img/sanatorio-duran.jpg",
       "galeria": [
         "assets/img/sanatorio-duran-01.jpg",
         "assets/img/sanatorio-duran-02.jpg",
         "assets/img/sanatorio-duran-03.jpg"
       ],
-      "audio": "assets/audio/sanatorio-duran-guia.mp3",
+      "audio": "assets/audio/sanatorio-duran-guia.mpeg",
       "video": "assets/video/sanatorio-duran.mp4",
-      "actividades": ["Tour histórico", "Fotografía patrimonial", "Senderismo de altura", "Tour nocturno"],
+      "actividades": [
+        "Recorrido histórico por las ruinas",
+        "Tour nocturno de leyendas y misterios",
+        "Fotografía patrimonial y paisajística",
+        "Visita combinada con el volcán Irazú",
+        "Senderismo en bosque de altura"
+      ],
       "lat": 9.8167,
       "lng": -83.9167
     },
@@ -128,16 +165,22 @@
       "id": "chorotega-001",
       "nombre": "Ecomuseo de las Minas de Abangares",
       "region": "Chorotega",
-      "descripcion": "El Ecomuseo de Abangares es un modelo de ecoturismo de base comunitaria. A finales del siglo XIX, compañías extranjeras explotaron el oro de estas montañas de bosque seco durante décadas. Hoy los propios descendientes de esos trabajadores administran el sitio, integrando senderos interpretativos en ecosistemas de bosque seco en regeneración con la memoria viva de la historia extractiva de la región.",
+      "descripcion": "Un viaje al pasado dorado de Costa Rica entre bosque seco y huellas de la fiebre del oro. El Ecomuseo de Abangares conserva túneles, herramientas y maquinaria de las minas que a finales del siglo XIX atrajeron a aventureros de todo el mundo. Hoy las comunidades locales son las guías, ofreciendo senderos interpretativos y la memoria viva de esta historia única.",
       "imagen_portada": "assets/img/ecomuseo-abangares.jpg",
       "galeria": [
         "assets/img/ecomuseo-abangares-01.jpg",
         "assets/img/ecomuseo-abangares-02.jpg",
         "assets/img/ecomuseo-abangares-03.jpg"
       ],
-      "audio": "assets/audio/ecomuseo-abangares-guia.mp3",
+      "audio": "assets/audio/ecomuseo-abangares-guia.mpeg",
       "video": "assets/video/ecomuseo-abangares.mp4",
-      "actividades": ["Tour comunitario", "Senderismo interpretativo", "Taller de historia ambiental", "Fotografía patrimonial"],
+      "actividades": [
+        "Recorrido por túneles mineros históricos",
+        "Senderismo interpretativo en bosque seco",
+        "Tour comunitario con guías locales",
+        "Visita al museo de la fiebre del oro",
+        "Fotografía patrimonial y de fauna"
+      ],
       "lat": 10.2167,
       "lng": -84.9833
     },
@@ -145,16 +188,22 @@
       "id": "chorotega-002",
       "nombre": "Las Pumas",
       "region": "Chorotega",
-      "descripcion": "El Centro de Rescate Las Pumas en Cañas alberga felinos rescatados como pumas, ocelotes, jaguarundis y margays que no pueden ser reintroducidos a la vida silvestre. Su valor ecoturístico radica en visibilizar la presión que el avance agrícola ejerce sobre los grandes carnívoros del Pacífico Seco, especie paraguas cuya desaparición desestabilizaría la cadena trófica del ecosistema completo.",
+      "descripcion": "Un refugio de rescate único en Cañas donde puedes conocer de cerca a los grandes felinos de Costa Rica. Las Pumas alberga jaguares, pumas, ocelotes, jaguarundis y margays rescatados que no pueden volver a la vida silvestre. Una experiencia educativa imprescindible para entender la conservación de la fauna y el valor del bosque seco tropical.",
       "imagen_portada": "assets/img/las-pumas.jpg",
       "galeria": [
         "assets/img/las-pumas-01.jpg",
         "assets/img/las-pumas-02.jpg",
         "assets/img/las-pumas-03.jpg"
       ],
-      "audio": "assets/audio/las-pumas-guia.mp3",
+      "audio": "assets/audio/las-pumas-guia.mpeg",
       "video": "assets/video/las-pumas.mp4",
-      "actividades": ["Avistamiento de felinos", "Educación ambiental", "Fotografía de fauna", "Tour guiado de conservación"],
+      "actividades": [
+        "Avistamiento de jaguares, pumas y ocelotes",
+        "Tour educativo de conservación felina",
+        "Charlas sobre rescate de fauna silvestre",
+        "Fotografía de felinos del bosque seco",
+        "Visita combinada con el Parque Palo Verde"
+      ],
       "lat": 10.4358,
       "lng": -85.1003
     }
