@@ -43,3 +43,12 @@ especificación del proyecto.
 |---------------------|---------------------|----------------|----------|
 | `nature.mp4`        | Fondo del hero      | TODO           | TODO     |
 | `videoplayback.mp4` | (sin asignar)       | TODO           | TODO     |
+
+## Mapa de regiones (SVG en `index.html`)
+
+| Recurso                    | Fuente / Autor                                   | Licencia                         |
+|----------------------------|--------------------------------------------------|----------------------------------|
+| Geometría de las 6 regiones socioeconómicas | MIDEPLAN — Decreto Ejecutivo 16068-PLAN (Atlas Digital de CR). GeoJSON simplificado vía curso GF0604, UCR. | Datos oficiales de uso público |
+
+> El SVG se generó convirtiendo el GeoJSON oficial a paths (proyección
+> equirectangular). Los colores son la paleta del proyecto.
