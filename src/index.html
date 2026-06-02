@@ -6,12 +6,20 @@
   <title>Guía Turística CR — Destinos de Costa Rica</title>
 
   <!--
-    CSS separado del HTML — buena práctica de separación de responsabilidades.
-    El archivo styles.css contiene toda la presentación visual.
+    CSS separado del HTML — separación de responsabilidades.
+    global.css → estilos globales (reset, variables de tema, tipografía).
+    styles.css → presentación de las secciones de la página.
   -->
+  <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <!-- ═══════════════════════════════════════════════
+       BARRA DE NAVEGACIÓN · Web Component <app-header>
+       Emite el evento 'region-selected' al elegir una región.
+       ═══════════════════════════════════════════════ -->
+  <app-header active-region="Todos"></app-header>
 
   <!-- ═══════════════════════════════════════════════
        HERO HEADER CON VIDEO DE FONDO
@@ -63,9 +71,9 @@
           <span class="sandbox-label">Entorno Aislado: &lt;galeria-imagenes&gt;</span>
           <galeria-imagenes id="gal-demo"
             imagenes='[
-              "assets/img/cahuita-1.jpg",
-              "assets/img/Rio_celeste-1.jpg",
-              "assets/img/Monteverde-1.jpg"
+              "assets/img/cahuita-1.png",
+              "assets/img/Rio_celeste-1.png",
+              "assets/img/Monteverde-1.png"
             ]'>
           </galeria-imagenes>
         </div>
@@ -198,6 +206,7 @@
     const overlay      = document.getElementById('overlay');
     const detalle      = document.getElementById('detalle');
     const countCounter = document.getElementById('destinos-count');
+    const appHeader    = document.querySelector('app-header');
 
     /**
      * inicializarApp
@@ -210,6 +219,11 @@
 
         const datos      = await respuesta.json();
         appState.destinos = datos.destinos;
+
+        // Fuente única de datos: el menú de <app-header> se deriva del JSON.
+        if (appHeader) {
+          appHeader.regiones = [...new Set(appState.destinos.map(d => d.region))];
+        }
 
         if (countCounter) {
           countCounter.textContent = `${appState.destinos.length} destinos disponibles`;
@@ -259,6 +273,28 @@
       overlay.classList.add('visible');
       document.body.style.overflow = 'hidden';
       overlay.focus?.();
+    });
+
+    /**
+     * Escucha 'region-selected' desde <app-header> y filtra el grid.
+     * 'Todos' muestra el catálogo completo.
+     */
+    document.addEventListener('region-selected', (event) => {
+      const { region } = event.detail;
+      const lista = (region === 'Todos')
+        ? appState.destinos
+        : appState.destinos.filter(d => d.region === region);
+
+      renderizarGridDestinos(lista);
+
+      if (countCounter) {
+        countCounter.textContent = (region === 'Todos')
+          ? `${lista.length} destinos disponibles`
+          : `${lista.length} destino(s) · ${region}`;
+      }
+
+      // Desplazar a la sección de destinos para ver el resultado del filtro.
+      document.getElementById('destinos')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
     /** Cierra el modal de detalle */

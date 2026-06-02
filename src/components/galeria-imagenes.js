@@ -69,6 +69,7 @@ class GaleriaImagenes extends HTMLElement {
     if (img) {
       img.classList.add('fade-out');
       setTimeout(() => {
+        img.style.visibility = 'visible';   // re-mostrar si venía oculta por error
         img.src = this._imgs[this._index] || '';
         img.alt = `Foto ${this._index + 1}`;
         img.classList.remove('fade-out');
@@ -109,7 +110,7 @@ class GaleriaImagenes extends HTMLElement {
         .gal-img-wrap {
           position: relative;
           width: 100%;
-          aspect-ratio: 16 / 9;
+          aspect-ratio: 4 / 3;
           background: #1a1a1a;
           overflow: hidden;
         }
@@ -200,7 +201,7 @@ class GaleriaImagenes extends HTMLElement {
         /* ── Sin imágenes ── */
         .empty-state {
           width: 100%;
-          aspect-ratio: 16 / 9;
+          aspect-ratio: 4 / 3;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -225,7 +226,7 @@ class GaleriaImagenes extends HTMLElement {
            </div>`
         : `<div class="gal-img-wrap">
              <img class="gal-img" src="${src}" alt="Foto ${this._index + 1}"
-                  loading="lazy">
+                  loading="lazy" onerror="this.style.visibility='hidden'">
              ${total > 1 ? `<span class="counter">${this._index + 1} / ${total}</span>` : ''}
              ${hasMany
                ? `<button class="nav-btn prev" aria-label="Foto anterior">

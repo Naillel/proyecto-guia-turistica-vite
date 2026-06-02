@@ -4,24 +4,25 @@
  * Recibe el objeto destino a través de la propiedad JS `destino`
  * (no por atributo, porque incluye arrays/objetos).
  *
+ * Integra internamente los componentes <galeria-imagenes> y <audio-guia>,
+ * tal como exige la especificación del proyecto.
+ *
  * Emite CustomEvent('detalle-cerrado') cuando el usuario cierra el modal.
  *
  * Uso:
  *   const det = document.querySelector('destino-detalle');
- *   det.destino = { id, nombre, region, descripcion, ... };
+ *   det.destino = { id, nombre, region, descripcion, galeria, audio, ... };
  */
 class DestinoDetalle extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
     this._destino = null;
-    this._activeImg = 0;
   }
 
   // ── API pública ─────────────────────────────────────────────────────────
   set destino(data) {
     this._destino = data || null;
-    this._activeImg = 0;
     this._render();
     this._bindEvents();
   }
@@ -58,10 +59,10 @@ class DestinoDetalle extends HTMLElement {
       return;
     }
 
-    const galeria   = Array.isArray(d.galeria) && d.galeria.length
+    // Construir el array de imágenes para <galeria-imagenes>.
+    const galeria = Array.isArray(d.galeria) && d.galeria.length
       ? d.galeria
       : (d.imagen_portada ? [d.imagen_portada] : []);
-    const imgActual = galeria[this._activeImg] || d.imagen_portada || '';
     const actividades = Array.isArray(d.actividades) ? d.actividades : [];
 
     this.shadowRoot.innerHTML = `
@@ -138,6 +139,7 @@ class DestinoDetalle extends HTMLElement {
         .content-grid {
           display: grid;
           grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+          align-items: start;   /* evita que la galería se estire (fondo negro) */
           gap: 22px;
           margin-bottom: 18px;
         }
@@ -146,55 +148,18 @@ class DestinoDetalle extends HTMLElement {
           .content-grid { grid-template-columns: 1fr; }
         }
 
-        /* ── Galería ── */
-        .galeria-wrap {
+        /* Columna izquierda: galería + ubicación apiladas */
+        .col-galeria {
           display: flex;
           flex-direction: column;
-          gap: 8px;
+          gap: 14px;
+          min-width: 0;
         }
-        .galeria-main {
-          width: 100%;
-          aspect-ratio: 4 / 3;
+
+        /* La galería se delega al componente <galeria-imagenes> */
+        galeria-imagenes {
           border-radius: 12px;
           overflow: hidden;
-          background: #111;
-        }
-        .galeria-main img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
-        }
-        .galeria-main .img-fallback {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 3rem;
-          color: #4ec5b8;
-          background: #222;
-        }
-        .galeria-thumbs {
-          display: flex;
-          gap: 6px;
-          justify-content: center;
-        }
-        .galeria-thumbs .thumb {
-          width: 28px;
-          height: 6px;
-          border-radius: 99px;
-          background: rgba(255,255,255,0.18);
-          cursor: pointer;
-          border: none;
-          padding: 0;
-          transition: background 0.2s ease;
-        }
-        .galeria-thumbs .thumb.active {
-          background: #4ec5b8;
-        }
-        .galeria-thumbs .thumb:hover {
-          background: rgba(78,197,184,0.6);
         }
 
         /* ── Texto descriptivo ── */
@@ -250,7 +215,7 @@ class DestinoDetalle extends HTMLElement {
           border: 1px solid rgba(78,197,184,0.18);
           border-radius: 12px;
           padding: 14px 16px;
-          margin-top: 18px;
+          margin-top: 0;
         }
         .ubicacion-box h4 {
           font-family: 'Georgia', 'Times New Roman', serif;
@@ -319,23 +284,23 @@ class DestinoDetalle extends HTMLElement {
         <span class="tipo-badge">Destino Imperdible</span>
 
         <div class="content-grid">
-          <!-- Galería -->
-          <div class="galeria-wrap">
-            <div class="galeria-main">
-              ${imgActual
-                ? `<img src="${imgActual}" alt="${d.nombre || ''}"
-                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                   <div class="img-fallback" style="display:none">🌿</div>`
-                : `<div class="img-fallback" style="display:flex">🌿</div>`}
-            </div>
-            ${galeria.length > 1 ? `
-              <div class="galeria-thumbs" role="tablist" aria-label="Imágenes del destino">
-                ${galeria.map((_, i) => `
-                  <button class="thumb ${i === this._activeImg ? 'active' : ''}"
-                          data-idx="${i}"
-                          aria-label="Imagen ${i + 1}"
-                          aria-selected="${i === this._activeImg}"></button>
-                `).join('')}
+          <!-- Columna izquierda: galería (componente reutilizable) + ubicación -->
+          <div class="col-galeria">
+            <galeria-imagenes imagenes='${JSON.stringify(galeria)}'></galeria-imagenes>
+
+            ${(d.lat != null && d.lng != null) ? `
+              <div class="ubicacion-box">
+                <h4>Ubicación Geográfica</h4>
+                <div class="ubicacion-grid">
+                  <div>
+                    <div class="ub-label">Latitud:</div>
+                    <div class="ub-valor">${this._fmtCoord(d.lat, 'N', 'S')}</div>
+                  </div>
+                  <div>
+                    <div class="ub-label">Longitud:</div>
+                    <div class="ub-valor">${this._fmtCoord(d.lng, 'E', 'W')}</div>
+                  </div>
+                </div>
               </div>
             ` : ''}
           </div>
@@ -362,24 +327,7 @@ class DestinoDetalle extends HTMLElement {
           </div>
         </div>
 
-        <!-- Ubicación geográfica -->
-        ${(d.lat != null && d.lng != null) ? `
-          <div class="ubicacion-box">
-            <h4>Ubicación Geográfica</h4>
-            <div class="ubicacion-grid">
-              <div>
-                <div class="ub-label">Latitud:</div>
-                <div class="ub-valor">${this._fmtCoord(d.lat, 'N', 'S')}</div>
-              </div>
-              <div>
-                <div class="ub-label">Longitud:</div>
-                <div class="ub-valor">${this._fmtCoord(d.lng, 'E', 'W')}</div>
-              </div>
-            </div>
-          </div>
-        ` : ''}
-
-        <!-- Audio guía -->
+        <!-- Audio guía: componente reutilizable <audio-guia> -->
         <div class="audio-box">
           <div class="audio-title">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -410,17 +358,6 @@ class DestinoDetalle extends HTMLElement {
         }));
       });
     }
-
-    // Cambio de imagen en la galería
-    this.shadowRoot.querySelectorAll('.thumb').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const idx = parseInt(btn.dataset.idx, 10);
-        if (isNaN(idx) || idx === this._activeImg) return;
-        this._activeImg = idx;
-        this._render();
-        this._bindEvents();
-      });
-    });
   }
 }
 

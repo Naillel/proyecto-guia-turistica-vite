@@ -44,6 +44,7 @@ class DestinoCard extends HTMLElement {
       'Huetar Norte':      { bg: '#edf5e0', badge: '#8ab83a', text: '#4a6e1a' },
       'Central':           { bg: '#f5ede0', badge: '#c49a6c', text: '#6b4f28' },
       'Pacifico Central':  { bg: '#f0e8dc', badge: '#a07040', text: '#5a3a18' },
+      'Huetar Caribe':     { bg: '#e0f3fa', badge: '#3aa0d8', text: '#1a5a80' },
       'Huetar Atlantica':  { bg: '#e0f3fa', badge: '#3aa0d8', text: '#1a5a80' },
     };
     const color = regionColors[this.region] || { bg: '#f0f0f0', badge: '#666', text: '#333' };

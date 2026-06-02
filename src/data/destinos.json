@@ -1,9 +1,9 @@
 {
   "destinos": [
     {
-      "id": "Cahuita-001",
+      "id": "cahuita-001",
       "nombre": "Cahuita",
-      "region": "Huetar Atlantica",
+      "region": "Huetar Caribe",
       "descripcion": "Un paraíso caribeño donde la selva tropical se encuentra con el mar cristalino. Cahuita es un pueblo tranquilo con un parque nacional que alberga playas vírgenes, arrecifes de coral y una biodiversidad increíble. Perfecto para los amantes del snorkel y la naturaleza en estado puro.",
       "imagen_portada": "assets/img/cahuita-1.png",
       "galeria": [
@@ -28,11 +28,11 @@
       "nombre": "Río Celeste",
       "region": "Huetar Norte",
       "descripcion": "Un milagro de la naturaleza escondido en el corazón del volcán Tenorio. El Río Celeste sorprende con su agua de un increíble color azul turquesa, fruto del encuentro mágico de dos ríos al pie del volcán. Senderos entre bosque lluvioso, cataratas espectaculares y aguas termales hacen de este lugar uno de los rincones más fotografiados de Costa Rica.",
-      "imagen_portada": "assets/img/rio-celeste.jpg",
+      "imagen_portada": "assets/img/Rio_celeste-1.png",
       "galeria": [
-        "assets/img/rio-celeste-01.jpg",
-        "assets/img/rio-celeste-02.jpg",
-        "assets/img/rio-celeste-03.jpg"
+        "assets/img/Rio_celeste-1.png",
+        "assets/img/Rio_celeste-2.png",
+        "assets/img/Rio_celeste-3.png"
       ],
       "audio": "assets/audio/rio-celeste-guia.mpeg",
       "video": "assets/video/rio-celeste.mp4",
@@ -74,11 +74,11 @@
       "nombre": "Tortuguero",
       "region": "Huetar Caribe",
       "descripcion": "Un santuario natural al que solo se llega en bote o avioneta. Tortuguero es famoso mundialmente por el desove de la tortuga verde entre julio y octubre, cuando miles de hembras llegan a la playa donde nacieron. Sus canales selváticos esconden caimanes, manatíes, perezosos y más de 400 especies de aves en uno de los ecosistemas más biodiversos del planeta.",
-      "imagen_portada": "assets/img/tortuguero.jpg",
+      "imagen_portada": "assets/img/Tortuguero-1.png",
       "galeria": [
-        "assets/img/tortuguero-01.jpg",
-        "assets/img/tortuguero-02.jpg",
-        "assets/img/tortuguero-03.jpg"
+        "assets/img/Tortuguero-1.png",
+        "assets/img/Tortuguero-2.png",
+        "assets/img/Tortuguero-3.png"
       ],
       "audio": "assets/audio/tortuguero-guia.mpeg",
       "video": "assets/video/tortuguero.mp4",
