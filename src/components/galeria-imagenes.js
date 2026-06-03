@@ -4,6 +4,7 @@
  * Galería con navegación anterior/siguiente entre fotos de un destino.
  * Atributo observado: imagenes (array JSON serializado con las rutas)
  * Controles de navegación estilizados y encapsulados con Shadow DOM.
+ * Al hacer clic en la foto se abre un lightbox a pantalla completa.
  *
  * Uso:
  *   <galeria-imagenes imagenes='["img1.jpg","img2.jpg"]'></galeria-imagenes>
@@ -25,18 +26,6 @@ class GaleriaImagenes extends HTMLElement {
     this._parseImagenes();
     this._render();
     this._bindEvents();
-    // Esc cierra el lightbox antes que el modal (fase de captura).
-    this._onEsc = (e) => {
-      if (e.key === 'Escape' && this.shadowRoot.querySelector('.lightbox.open')) {
-        e.stopPropagation();
-        this._cerrarLightbox?.();
-      }
-    };
-    document.addEventListener('keydown', this._onEsc, true);
-  }
-
-  disconnectedCallback() {
-    document.removeEventListener('keydown', this._onEsc, true);
   }
 
   attributeChangedCallback(name, oldVal, newVal) {
@@ -225,46 +214,6 @@ class GaleriaImagenes extends HTMLElement {
           background: #1a1a1a;
         }
         .empty-state svg { opacity: 0.3; }
-
-        /* ── Lightbox (imagen ampliada) ── */
-        .lightbox {
-          position: fixed;
-          inset: 0;
-          z-index: 1000;
-          display: none;
-          align-items: center;
-          justify-content: center;
-          background: rgba(0,0,0,0.92);
-          padding: 24px;
-          cursor: zoom-out;
-        }
-        .lightbox.open { display: flex; }
-        .lightbox .lb-img {
-          max-width: 96vw;
-          max-height: 92vh;
-          object-fit: contain;
-          border-radius: 8px;
-          box-shadow: 0 12px 48px rgba(0,0,0,0.6);
-        }
-        .lb-close {
-          position: fixed;
-          top: 16px;
-          right: 20px;
-          width: 42px;
-          height: 42px;
-          border-radius: 50%;
-          background: rgba(255,255,255,0.15);
-          border: none;
-          color: #fff;
-          font-size: 20px;
-          line-height: 1;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: background 0.18s ease;
-        }
-        .lb-close:hover { background: rgba(255,255,255,0.3); }
       </style>
 
       ${total === 0
@@ -299,10 +248,6 @@ class GaleriaImagenes extends HTMLElement {
                   <div class="dots">${dotsHtml}</div>`
                : ''
              }
-           </div>
-           <div class="lightbox" role="dialog" aria-label="Imagen ampliada">
-             <button class="lb-close" aria-label="Cerrar imagen">&#10005;</button>
-             <img class="lb-img" alt="">
            </div>`
       }
     `;
@@ -339,32 +284,70 @@ class GaleriaImagenes extends HTMLElement {
       }, { passive: true });
     }
 
+    // Clic en la foto → lightbox a pantalla completa
+    const galImg = this.shadowRoot.querySelector('.gal-img');
+    if (galImg) {
+      galImg.addEventListener('click', () => {
+        abrirLightbox(this._imgs[this._index] || '', `Foto ${this._index + 1} ampliada`);
+      });
+    }
+
     // Teclado (cuando el componente tiene foco)
     this.setAttribute('tabindex', '0');
     this.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft')  { e.preventDefault(); this._prev(); }
       if (e.key === 'ArrowRight') { e.preventDefault(); this._next(); }
     });
-
-    // ── Lightbox: clic en la foto la muestra en grande ──
-    const galImg   = this.shadowRoot.querySelector('.gal-img');
-    const lightbox = this.shadowRoot.querySelector('.lightbox');
-    const lbImg    = this.shadowRoot.querySelector('.lb-img');
-    const lbClose  = this.shadowRoot.querySelector('.lb-close');
-
-    this._cerrarLightbox = () => lightbox && lightbox.classList.remove('open');
-
-    if (galImg && lightbox && lbImg) {
-      galImg.addEventListener('click', () => {
-        lbImg.src = this._imgs[this._index] || '';
-        lbImg.alt = `Foto ${this._index + 1} ampliada`;
-        lightbox.classList.add('open');
-      });
-      lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox || e.target === lbClose) this._cerrarLightbox();
-      });
-    }
   }
+}
+
+/* ── Lightbox compartido ──────────────────────────────────────────────────
+   Vive a nivel <body> (no en el Shadow DOM) para cubrir todo el viewport:
+   si estuviera dentro del modal, el backdrop-filter de un ancestro crearía
+   un bloque contenedor y recortaría el position:fixed. Es un único elemento
+   reutilizado por todas las instancias de <galeria-imagenes>.
+   ────────────────────────────────────────────────────────────────────────── */
+let _lightbox = null;
+
+function _crearLightbox() {
+  const lb = document.createElement('div');
+  lb.className = 'galeria-lightbox';
+  lb.setAttribute('role', 'dialog');
+  lb.setAttribute('aria-label', 'Imagen ampliada');
+  lb.style.cssText =
+    'position:fixed;inset:0;z-index:9999;display:none;align-items:center;' +
+    'justify-content:center;background:rgba(0,0,0,.92);padding:24px;cursor:zoom-out;';
+  lb.innerHTML =
+    '<button class="lb-close" aria-label="Cerrar imagen" style="position:fixed;top:16px;' +
+    'right:20px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.15);' +
+    'border:none;color:#fff;font-size:20px;line-height:1;cursor:pointer;display:flex;' +
+    'align-items:center;justify-content:center;">✕</button>' +
+    '<img class="lb-img" alt="" style="max-width:96vw;max-height:92vh;object-fit:contain;' +
+    'border-radius:8px;box-shadow:0 12px 48px rgba(0,0,0,.6);">';
+
+  const cerrar = () => { lb.style.display = 'none'; };
+  lb.addEventListener('click', (e) => {
+    if (e.target === lb || e.target.classList.contains('lb-close')) cerrar();
+  });
+  // Esc cierra el lightbox antes que el modal (fase de captura).
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lb.style.display === 'flex') {
+      e.stopPropagation();
+      cerrar();
+    }
+  }, true);
+
+  document.body.appendChild(lb);
+  return lb;
+}
+
+function abrirLightbox(src, alt) {
+  if (!src) return;
+  if (!_lightbox) _lightbox = _crearLightbox();
+  const img = _lightbox.querySelector('.lb-img');
+  img.src = src;
+  img.alt = alt;
+  _lightbox.style.display = 'flex';
 }
 
 customElements.define('galeria-imagenes', GaleriaImagenes);
