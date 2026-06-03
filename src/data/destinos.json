@@ -51,11 +51,11 @@
       "nombre": "Quebrada Gata",
       "region": "Huetar Norte",
       "descripcion": "Una joya escondida entre la selva tropical de la zona norte. Quebrada Gata es un refugio natural en Venecia de San Carlos donde el bosque lluvioso se mantiene casi intacto. Sus aguas frescas, las pozas naturales y la abundante fauna del sotobosque la convierten en el destino ideal para quienes buscan aventura auténtica lejos del turismo masivo.",
-      "imagen_portada": "assets/img/quebrada-gata.jpg",
+      "imagen_portada": "assets/img/virador-1.png",
       "galeria": [
-        "assets/img/quebrada-gata-01.jpg",
-        "assets/img/quebrada-gata-02.jpg",
-        "assets/img/quebrada-gata-03.jpg"
+        "assets/img/virador-1.png",
+        "assets/img/virador-2.png",
+        "assets/img/virador-3.png"
       ],
       "audio": "assets/audio/QuebradaGata-Guia.mp3",
       "video": "assets/video/quebrada-gata.mp4",
@@ -97,11 +97,11 @@
       "nombre": "Manzanillo",
       "region": "Huetar Caribe",
       "descripcion": "El Refugio Nacional Gandoca-Manzanillo protege el sistema arrecifal más extenso y mejor conservado de Costa Rica. Bajo sus aguas coexisten más de 30 especies de coral, tortugas carey y delfines nariz de botella. En tierra, el bosque costero alberga jaguares y tapires, creando una transición única entre el mar y la selva separados por apenas unos metros.",
-      "imagen_portada": "assets/img/manzanillo.jpg",
+      "imagen_portada": "assets/img/Bahia_drake-1.png",
       "galeria": [
-        "assets/img/manzanillo-01.jpg",
-        "assets/img/manzanillo-02.jpg",
-        "assets/img/manzanillo-03.jpg"
+        "assets/img/Bahia_drake-1.png",
+        "assets/img/Bahia_drake-2.png",
+        "assets/img/Bahia_drake-3.png"
       ],
       "audio": "assets/audio/Manzanillo-Guia.mp3",
       "video": "assets/video/manzanillo.mp4",
@@ -120,11 +120,11 @@
       "nombre": "Parque Los Quetzales",
       "region": "Central",
       "descripcion": "Un bosque nuboso mágico en las alturas de la Cordillera de Talamanca donde habita una de las aves más bellas del mundo: el quetzal resplandeciente. Entre robledales cubiertos de musgo, neblina constante y temperaturas frescas, este parque ofrece la mejor oportunidad para observar quetzales y disfrutar de paisajes de montaña a más de 2.600 metros de altura.",
-      "imagen_portada": "assets/img/parque-quetzales.jpg",
+      "imagen_portada": "assets/img/Monteverde-1.png",
       "galeria": [
-        "assets/img/parque-quetzales-01.jpg",
-        "assets/img/parque-quetzales-02.jpg",
-        "assets/img/parque-quetzales-03.jpg"
+        "assets/img/Monteverde-1.png",
+        "assets/img/Monteverde-2.png",
+        "assets/img/Monteverde-3.png"
       ],
       "audio": "assets/audio/ParqueLosQuetzales-Guia.mp3",
       "video": "assets/video/parque-quetzales.mp4",
@@ -143,11 +143,11 @@
       "nombre": "Sanatorio Durán",
       "region": "Central",
       "descripcion": "Construido en 1915 en las faldas del volcán Irazú, el Sanatorio Durán fue escogido por su altitud: el aire frío del bosque nuboso era el tratamiento estándar para la tuberculosis en la medicina de la época. Hoy es un testigo material de cómo el ecosistema de altura moldeó decisiones humanas históricas, y uno de los destinos de turismo cultural más visitados de Cartago.",
-      "imagen_portada": "assets/img/sanatorio-duran.jpg",
+      "imagen_portada": "assets/img/orosi-1.png",
       "galeria": [
-        "assets/img/sanatorio-duran-01.jpg",
-        "assets/img/sanatorio-duran-02.jpg",
-        "assets/img/sanatorio-duran-03.jpg"
+        "assets/img/orosi-1.png",
+        "assets/img/orosi-2.png",
+        "assets/img/orosi-3.png"
       ],
       "audio": "assets/audio/SanatorioDuran-Guia.mp3",
       "video": "assets/video/sanatorio-duran.mp4",
@@ -166,11 +166,11 @@
       "nombre": "Ecomuseo de las Minas de Abangares",
       "region": "Chorotega",
       "descripcion": "Un viaje al pasado dorado de Costa Rica entre bosque seco y huellas de la fiebre del oro. El Ecomuseo de Abangares conserva túneles, herramientas y maquinaria de las minas que a finales del siglo XIX atrajeron a aventureros de todo el mundo. Hoy las comunidades locales son las guías, ofreciendo senderos interpretativos y la memoria viva de esta historia única.",
-      "imagen_portada": "assets/img/ecomuseo-abangares.jpg",
+      "imagen_portada": "assets/img/Montezuma-1.png",
       "galeria": [
-        "assets/img/ecomuseo-abangares-01.jpg",
-        "assets/img/ecomuseo-abangares-02.jpg",
-        "assets/img/ecomuseo-abangares-03.jpg"
+        "assets/img/Montezuma-1.png",
+        "assets/img/Montezuma-2.png",
+        "assets/img/Montezuma-3.png"
       ],
       "audio": "assets/audio/EcomuseoAbangares-Guia.mp3",
       "video": "assets/video/ecomuseo-abangares.mp4",
@@ -189,11 +189,11 @@
       "nombre": "Las Pumas",
       "region": "Chorotega",
       "descripcion": "Un refugio de rescate único en Cañas donde puedes conocer de cerca a los grandes felinos de Costa Rica. Las Pumas alberga jaguares, pumas, ocelotes, jaguarundis y margays rescatados que no pueden volver a la vida silvestre. Una experiencia educativa imprescindible para entender la conservación de la fauna y el valor del bosque seco tropical.",
-      "imagen_portada": "assets/img/las-pumas.jpg",
+      "imagen_portada": "assets/img/Montezuma-1.png",
       "galeria": [
-        "assets/img/las-pumas-01.jpg",
-        "assets/img/las-pumas-02.jpg",
-        "assets/img/las-pumas-03.jpg"
+        "assets/img/Montezuma-1.png",
+        "assets/img/Montezuma-2.png",
+        "assets/img/Montezuma-3.png"
       ],
       "audio": "assets/audio/LasPumas-Guia.mp3",
       "video": "assets/video/las-pumas.mp4",
