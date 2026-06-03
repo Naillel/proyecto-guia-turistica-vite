@@ -1,0 +1,59 @@
+/* ═══════════════════════════════════════════════════════════════
+   GUÍA TURÍSTICA DE COSTA RICA · global.css
+   Estilos globales únicamente: reset, variables de tema y tipografía
+   base. La presentación de cada sección vive en styles.css y la de
+   cada componente dentro de su propio Shadow DOM.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── RESET ──────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── VARIABLES DE TEMA ──────────────────────────────────────────── */
+:root {
+  /* Paleta principal */
+  --primary:        #2d6a10;
+  --primary-light:  #4a8e28;
+  --primary-dark:   #1a4208;
+  --accent:         #e8a020;
+
+  /* Superficies */
+  --bg-global:      #f4f6f3;
+  --bg-surface:     #ffffff;
+  --bg-muted:       #f0f2ee;
+
+  /* Texto */
+  --text-main:      #1a1f18;
+  --text-secondary: #4a5248;
+  --text-muted:     #7a8578;
+
+  /* Bordes y sombras */
+  --border-color:   rgba(56, 107, 32, 0.15);
+  --shadow-sm:      0 1px 4px rgba(0,0,0,0.07);
+  --shadow-md:      0 4px 20px rgba(0,0,0,0.10);
+  --shadow-lg:      0 12px 40px rgba(0,0,0,0.14);
+
+  /* Radio */
+  --radius-sm:      8px;
+  --radius-md:      14px;
+  --radius-lg:      22px;
+  --radius-xl:      32px;
+
+  /* Tipografía */
+  --font-stack:     'Times New Roman', Times, serif;
+  --font-ui:        'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* ── BASE / TIPOGRAFÍA ──────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-stack);
+  background: var(--bg-global);
+  color: var(--text-main);
+  min-height: 100vh;
+  line-height: 1.6;
+}
