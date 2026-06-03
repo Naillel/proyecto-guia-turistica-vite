@@ -184,6 +184,15 @@ destino-card:hover {
   box-shadow: var(--shadow-md);
 }
 
+/* Resalte al llegar desde un destino del mapa */
+destino-card.flash {
+  animation: cardFlash 1.6s ease;
+}
+@keyframes cardFlash {
+  0%, 100% { outline: 0 solid rgba(232,160,32,0);  outline-offset: 3px; }
+  18%, 55% { outline: 4px solid var(--accent);     outline-offset: 3px; }
+}
+
 /* ═══════════════════════════════════════════════════════════════
    SANDBOX (PRUEBAS DE COMPONENTES AISLADOS)
    ═══════════════════════════════════════════════════════════════ */
@@ -286,155 +295,155 @@ destino-card:hover {
 /* Provincias interactivas */
 .province {
   cursor: pointer;
-  stroke: #fff;
-  stroke-width: 1.4;
+  fill: #5a8a2e;                 /* todas las regiones del mismo verde */
+  stroke: #294a12;               /* divisiones (bordes) más oscuras */
+  stroke-width: 1.6;
   stroke-linejoin: round;
-  transition: filter 0.16s ease, opacity 0.16s ease;
+  transition: filter 0.18s ease;
 }
 
+/* Glow al pasar el cursor por la región */
 .province:hover {
-  filter: brightness(0.80) saturate(1.20);
-  opacity: 0.92;
+  filter: brightness(1.18) saturate(1.1) drop-shadow(0 0 6px rgba(150,220,90,0.7));
 }
 
-/* Lago / laguna */
-.laguna {
-  fill: #9fd3ee;
-  stroke: #fff;
-  stroke-width: 0.8;
-  pointer-events: none;
+/* Región resaltada mientras se muestran sus gotas */
+.province.selected {
+  filter: brightness(1.26) saturate(1.15) drop-shadow(0 0 9px rgba(150,220,90,0.85));
 }
 
-/* ── TOOLTIP DEL MAPA ──────────────────────────────────────────── */
-/*
-   FIX DEL ERROR: La versión anterior usaba #tooltip como ID del
-   elemento pero el JS de initMap() buscaba ese ID. Al mismo tiempo,
-   la versión nueva nombró el elemento como class="map-tooltip".
-   Unificamos: el elemento tiene id="map-tooltip" y lo estilamos aquí.
-*/
-#map-tooltip {
-  position: fixed;
-  background: #fff;
-  border-radius: var(--radius-md);
-  padding: 14px 18px;
-  max-width: 300px;
-  min-width: 210px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.18s ease, transform 0.18s ease;
-  transform: translateY(8px);
-  box-shadow:
-    0 8px 32px rgba(0,0,0,0.13),
-    0 0 0 1px rgba(0,0,0,0.06);
-  z-index: 999;
+/* Nombre de la región encima del mapa */
+.region-label {
+  fill: #ffffff;
+  stroke: #1f3d0e;
+  stroke-width: 3px;
+  paint-order: stroke;
   font-family: var(--font-ui);
-}
-
-#map-tooltip.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Etiqueta de región dentro del tooltip */
-.tt-region-label {
-  font-size: 9.5px;
+  font-size: 13px;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  margin-bottom: 3px;
-  opacity: 0.72;
+  text-anchor: middle;
+  pointer-events: none;
 }
 
-/* Título dentro del tooltip */
-.tt-title {
-  font-size: 13.5px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #f0f0f0;
-  color: var(--text-main);
+/* ── GOTAS FLOTANTES DE DESTINOS (al pasar el cursor por una región) ── */
+#map-drops {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  pointer-events: none;        /* la capa no bloquea; cada gota sí */
 }
 
-/* Cada destino dentro del tooltip */
-.dest {
+/* Contenedor de la gota: hace la entrada y centra burbuja + nombre */
+#map-drops .drop {
+  position: absolute;
   display: flex;
-  gap: 9px;
-  align-items: flex-start;
-  margin-bottom: 7px;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  pointer-events: auto;
+  cursor: pointer;
+  opacity: 0;
+  animation: dropIn 0.5s cubic-bezier(.34,1.7,.5,1) forwards;
+  will-change: transform, opacity;
 }
 
-.dest:last-child { margin-bottom: 0; }
+/* La burbuja: forma de gota, vidriosa, flotando en bucle */
+#map-drops .drop-bubble {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;          /* burbuja redonda */
+  overflow: hidden;
+  background: #bfe0ad;
+  border: 2px solid rgba(255,255,255,0.75);
+  box-shadow:
+    0 10px 20px rgba(20,50,10,0.32),
+    inset 0 3px 7px rgba(255,255,255,0.55),
+    inset 0 -7px 12px rgba(20,60,10,0.28);
+  animation: dropFloat 3s ease-in-out infinite;
+}
+#map-drops .drop:nth-child(2n) .drop-bubble { animation-duration: 3.7s; }
+#map-drops .drop:nth-child(3n) .drop-bubble { animation-duration: 2.6s; }
 
-.dest-name {
-  font-size: 12.5px;
-  font-weight: 700;
-  color: var(--text-main);
-  line-height: 1.3;
+#map-drops .drop-bubble img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* brillo tipo agua */
+#map-drops .drop-bubble::after {
+  content: '';
+  position: absolute;
+  top: 9%;
+  left: 15%;
+  width: 36%;
+  height: 28%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(255,255,255,0) 70%);
+  pointer-events: none;
 }
 
-.dest-info {
-  font-size: 11px;
-  color: var(--text-muted);
-  margin-top: 2px;
+#map-drops .drop:hover .drop-bubble,
+#map-drops .drop:focus-visible .drop-bubble {
+  animation-play-state: paused;
+  transform: scale(1.14);
+  box-shadow:
+    0 14px 28px rgba(20,50,10,0.42),
+    inset 0 3px 7px rgba(255,255,255,0.6);
+}
+#map-drops .drop:focus-visible { outline: none; }
+
+/* etiqueta del nombre bajo la gota */
+#map-drops .drop-name {
+  font: 700 10.5px var(--font-ui);
+  color: #11380a;
+  background: rgba(255,255,255,0.92);
+  border-radius: 99px;
+  padding: 2px 8px;
+  white-space: nowrap;
+  box-shadow: 0 2px 7px rgba(0,0,0,0.18);
 }
 
-/* ── BADGES DE CATEGORÍA ────────────────────────────────────────── */
-.badge {
+@keyframes dropIn {
+  0%   { opacity: 0; transform: translate(-50%, calc(-50% + 26px)) scale(0.3); }
+  60%  { opacity: 1; }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+@keyframes dropFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-9px); }
+}
+
+/* ── MINI-GUÍA DE USO DEL MAPA ──────────────────────────────────── */
+.map-guide {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 18px;
+  margin-top: 1.3rem;
+}
+
+.guide-step {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  font-size: 9px;
-  font-weight: 700;
+  gap: 8px;
   font-family: var(--font-ui);
-  padding: 2px 8px;
-  border-radius: 99px;
-  white-space: nowrap;
-  flex-shrink: 0;
-  margin-top: 2px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.b-clasico  { background: #e0f0d8; color: #1e5210; }
-.b-oculta   { background: #ddeeff; color: #123e7a; }
-.b-fuera    { background: #fef3cd; color: #8a5c00; }
-.b-reciente { background: #ede9fe; color: #5b21b6; }
-
-/* ── LEYENDA DEL MAPA ──────────────────────────────────────────── */
-.legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 18px;
-  margin-top: 1.3rem;
-  justify-content: center;
-  max-width: 640px;
-  margin-inline: auto;
-}
-
-.li {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-family: var(--font-ui);
-  font-size: 11.5px;
+  font-size: 12.5px;
   color: var(--text-secondary);
 }
+.guide-step strong { color: var(--primary); font-weight: 700; }
 
-.ld {
-  width: 14px;
-  height: 14px;
-  border-radius: 4px;
-  border: 1px solid rgba(0,0,0,0.12);
-  flex-shrink: 0;
+.guide-icon { color: var(--primary); flex-shrink: 0; }
+
+.guide-sep {
+  width: 1px;
+  height: 16px;
+  background: var(--border-color);
 }
-
-/* Leyenda de badges */
-.badge-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 12px;
-  margin-top: 1rem;
-  justify-content: center;
+@media (max-width: 520px) {
+  .guide-sep { display: none; }
 }
 
 /* ═══════════════════════════════════════════════════════════════

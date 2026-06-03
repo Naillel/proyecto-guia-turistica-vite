@@ -25,6 +25,18 @@ class GaleriaImagenes extends HTMLElement {
     this._parseImagenes();
     this._render();
     this._bindEvents();
+    // Esc cierra el lightbox antes que el modal (fase de captura).
+    this._onEsc = (e) => {
+      if (e.key === 'Escape' && this.shadowRoot.querySelector('.lightbox.open')) {
+        e.stopPropagation();
+        this._cerrarLightbox?.();
+      }
+    };
+    document.addEventListener('keydown', this._onEsc, true);
+  }
+
+  disconnectedCallback() {
+    document.removeEventListener('keydown', this._onEsc, true);
   }
 
   attributeChangedCallback(name, oldVal, newVal) {
@@ -119,6 +131,7 @@ class GaleriaImagenes extends HTMLElement {
           height: 100%;
           object-fit: cover;
           display: block;
+          cursor: zoom-in;
           transition: opacity 0.18s ease;
         }
         .gal-img.fade-out {
@@ -212,6 +225,46 @@ class GaleriaImagenes extends HTMLElement {
           background: #1a1a1a;
         }
         .empty-state svg { opacity: 0.3; }
+
+        /* ── Lightbox (imagen ampliada) ── */
+        .lightbox {
+          position: fixed;
+          inset: 0;
+          z-index: 1000;
+          display: none;
+          align-items: center;
+          justify-content: center;
+          background: rgba(0,0,0,0.92);
+          padding: 24px;
+          cursor: zoom-out;
+        }
+        .lightbox.open { display: flex; }
+        .lightbox .lb-img {
+          max-width: 96vw;
+          max-height: 92vh;
+          object-fit: contain;
+          border-radius: 8px;
+          box-shadow: 0 12px 48px rgba(0,0,0,0.6);
+        }
+        .lb-close {
+          position: fixed;
+          top: 16px;
+          right: 20px;
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          background: rgba(255,255,255,0.15);
+          border: none;
+          color: #fff;
+          font-size: 20px;
+          line-height: 1;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 0.18s ease;
+        }
+        .lb-close:hover { background: rgba(255,255,255,0.3); }
       </style>
 
       ${total === 0
@@ -246,6 +299,10 @@ class GaleriaImagenes extends HTMLElement {
                   <div class="dots">${dotsHtml}</div>`
                : ''
              }
+           </div>
+           <div class="lightbox" role="dialog" aria-label="Imagen ampliada">
+             <button class="lb-close" aria-label="Cerrar imagen">&#10005;</button>
+             <img class="lb-img" alt="">
            </div>`
       }
     `;
@@ -288,6 +345,25 @@ class GaleriaImagenes extends HTMLElement {
       if (e.key === 'ArrowLeft')  { e.preventDefault(); this._prev(); }
       if (e.key === 'ArrowRight') { e.preventDefault(); this._next(); }
     });
+
+    // ── Lightbox: clic en la foto la muestra en grande ──
+    const galImg   = this.shadowRoot.querySelector('.gal-img');
+    const lightbox = this.shadowRoot.querySelector('.lightbox');
+    const lbImg    = this.shadowRoot.querySelector('.lb-img');
+    const lbClose  = this.shadowRoot.querySelector('.lb-close');
+
+    this._cerrarLightbox = () => lightbox && lightbox.classList.remove('open');
+
+    if (galImg && lightbox && lbImg) {
+      galImg.addEventListener('click', () => {
+        lbImg.src = this._imgs[this._index] || '';
+        lbImg.alt = `Foto ${this._index + 1} ampliada`;
+        lightbox.classList.add('open');
+      });
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target === lbClose) this._cerrarLightbox();
+      });
+    }
   }
 }
 
