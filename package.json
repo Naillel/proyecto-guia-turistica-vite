@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "pnpx vite src/ --port 1234",
-    "deploy": "gh-pages -d src/ --no-history"
+    "dev": "vite --port 1234",
+    "build": "vite build",
+    "deploy": "gh-pages -d dist --no-history"
   },
   "keywords": [],
   "author": "Naillel",
