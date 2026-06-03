@@ -4,6 +4,7 @@
  * Galería con navegación anterior/siguiente entre fotos de un destino.
  * Atributo observado: imagenes (array JSON serializado con las rutas)
  * Controles de navegación estilizados y encapsulados con Shadow DOM.
+ * Al hacer clic en la foto se abre un lightbox a pantalla completa.
  *
  * Uso:
  *   <galeria-imagenes imagenes='["img1.jpg","img2.jpg"]'></galeria-imagenes>
@@ -69,6 +70,7 @@ class GaleriaImagenes extends HTMLElement {
     if (img) {
       img.classList.add('fade-out');
       setTimeout(() => {
+        img.style.visibility = 'visible';   // re-mostrar si venía oculta por error
         img.src = this._imgs[this._index] || '';
         img.alt = `Foto ${this._index + 1}`;
         img.classList.remove('fade-out');
@@ -109,7 +111,7 @@ class GaleriaImagenes extends HTMLElement {
         .gal-img-wrap {
           position: relative;
           width: 100%;
-          aspect-ratio: 16 / 9;
+          aspect-ratio: 4 / 3;
           background: #1a1a1a;
           overflow: hidden;
         }
@@ -118,6 +120,7 @@ class GaleriaImagenes extends HTMLElement {
           height: 100%;
           object-fit: cover;
           display: block;
+          cursor: zoom-in;
           transition: opacity 0.18s ease;
         }
         .gal-img.fade-out {
@@ -200,7 +203,7 @@ class GaleriaImagenes extends HTMLElement {
         /* ── Sin imágenes ── */
         .empty-state {
           width: 100%;
-          aspect-ratio: 16 / 9;
+          aspect-ratio: 4 / 3;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -225,7 +228,7 @@ class GaleriaImagenes extends HTMLElement {
            </div>`
         : `<div class="gal-img-wrap">
              <img class="gal-img" src="${src}" alt="Foto ${this._index + 1}"
-                  loading="lazy">
+                  loading="lazy" onerror="this.style.visibility='hidden'">
              ${total > 1 ? `<span class="counter">${this._index + 1} / ${total}</span>` : ''}
              ${hasMany
                ? `<button class="nav-btn prev" aria-label="Foto anterior">
@@ -281,6 +284,14 @@ class GaleriaImagenes extends HTMLElement {
       }, { passive: true });
     }
 
+    // Clic en la foto → lightbox a pantalla completa
+    const galImg = this.shadowRoot.querySelector('.gal-img');
+    if (galImg) {
+      galImg.addEventListener('click', () => {
+        abrirLightbox(this._imgs[this._index] || '', `Foto ${this._index + 1} ampliada`);
+      });
+    }
+
     // Teclado (cuando el componente tiene foco)
     this.setAttribute('tabindex', '0');
     this.addEventListener('keydown', (e) => {
@@ -288,6 +299,55 @@ class GaleriaImagenes extends HTMLElement {
       if (e.key === 'ArrowRight') { e.preventDefault(); this._next(); }
     });
   }
+}
+
+/* ── Lightbox compartido ──────────────────────────────────────────────────
+   Vive a nivel <body> (no en el Shadow DOM) para cubrir todo el viewport:
+   si estuviera dentro del modal, el backdrop-filter de un ancestro crearía
+   un bloque contenedor y recortaría el position:fixed. Es un único elemento
+   reutilizado por todas las instancias de <galeria-imagenes>.
+   ────────────────────────────────────────────────────────────────────────── */
+let _lightbox = null;
+
+function _crearLightbox() {
+  const lb = document.createElement('div');
+  lb.className = 'galeria-lightbox';
+  lb.setAttribute('role', 'dialog');
+  lb.setAttribute('aria-label', 'Imagen ampliada');
+  lb.style.cssText =
+    'position:fixed;inset:0;z-index:9999;display:none;align-items:center;' +
+    'justify-content:center;background:rgba(0,0,0,.92);padding:24px;cursor:zoom-out;';
+  lb.innerHTML =
+    '<button class="lb-close" aria-label="Cerrar imagen" style="position:fixed;top:16px;' +
+    'right:20px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.15);' +
+    'border:none;color:#fff;font-size:20px;line-height:1;cursor:pointer;display:flex;' +
+    'align-items:center;justify-content:center;">✕</button>' +
+    '<img class="lb-img" alt="" style="max-width:96vw;max-height:92vh;object-fit:contain;' +
+    'border-radius:8px;box-shadow:0 12px 48px rgba(0,0,0,.6);">';
+
+  const cerrar = () => { lb.style.display = 'none'; };
+  lb.addEventListener('click', (e) => {
+    if (e.target === lb || e.target.classList.contains('lb-close')) cerrar();
+  });
+  // Esc cierra el lightbox antes que el modal (fase de captura).
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lb.style.display === 'flex') {
+      e.stopPropagation();
+      cerrar();
+    }
+  }, true);
+
+  document.body.appendChild(lb);
+  return lb;
+}
+
+function abrirLightbox(src, alt) {
+  if (!src) return;
+  if (!_lightbox) _lightbox = _crearLightbox();
+  const img = _lightbox.querySelector('.lb-img');
+  img.src = src;
+  img.alt = alt;
+  _lightbox.style.display = 'flex';
 }
 
 customElements.define('galeria-imagenes', GaleriaImagenes);

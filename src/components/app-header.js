@@ -1,209 +1,207 @@
-const regionData = {
-  "chorotega": {
-    "label": "Región Chorotega",
-    "color_fill": "#5a8a2e",
-    "color_title": "#2d4a14",
-    "provinces": ["CR-G"],
-    "destinos": [
-      {
-        "name": "Playa Virador",
-        "tipo": "b-oculta",
-        "badge": "Joya Oculta",
-        "costo": "Gratuito",
-        "desc": "Arena blanca, Península de Papagayo"
-      },
-      {
-        "name": "Playa Prieta",
-        "tipo": "b-oculta",
-        "badge": "Joya Oculta",
-        "costo": "Gratuito",
-        "desc": "Playa pequeña y tranquila"
-      },
-      {
-        "name": "Catarata Llanos de Cortés",
-        "tipo": "b-clasico",
-        "badge": "Clásico Imperdible",
-        "costo": "Aporte voluntario",
-        "desc": "Icónica catarata comunitaria"
-      },
-      {
-        "name": "Centro de Rescate Las Pumas",
-        "tipo": "b-fuera",
-        "badge": "Fuera del Circuito",
-        "costo": "~₡3.000",
-        "desc": "170+ animales, 27 especies"
-      },
-      {
-        "name": "P.N. Rincón de la Vieja",
-        "tipo": "b-clasico",
-        "badge": "Clásico Imperdible",
-        "costo": "~$18",
-        "desc": "Senderos volcánicos y pailas"
-      }
-    ]
-  },
-  "huetar_norte": {
-    "label": "Región Huetar Norte",
-    "color_fill": "#8ab83a",
-    "color_title": "#4a6e1a",
-    "provinces": ["CR-A"],
-    "destinos": [
-      {
-        "name": "Río Celeste — Volcán Tenorio",
-        "tipo": "b-reciente",
-        "badge": "Recién Descubierto",
-        "costo": "~₡6.000",
-        "desc": "Aguas turquesas de origen volcánico"
-      },
-      {
-        "name": "Rescate Wildlife Center",
-        "tipo": "b-clasico",
-        "badge": "Clásico Imperdible",
-        "costo": "Precio accesible",
-        "desc": "650+ especies, Zoo Ave"
-      }
-    ]
-  },
-  "central": {
-    "label": "Región Central",
-    "color_fill": "#c49a6c",
-    "color_title": "#6b4f28",
-    "provinces": ["CR-H", "CR-SJ", "CR-C"],
-    "destinos": [
-      {
-        "name": "Valle de Orosi",
-        "tipo": "b-oculta",
-        "badge": "Joya Oculta",
-        "costo": "Gratuito",
-        "desc": "Ruinas coloniales y embalse Cachí"
-      },
-      {
-        "name": "San Gerardo de Dota",
-        "tipo": "b-fuera",
-        "badge": "Fuera del Circuito",
-        "costo": "Gratuito",
-        "desc": "Bosque nuboso y avistamiento del quetzal"
-      }
-    ]
-  },
-  "pacifico_central": {
-    "label": "Región Pacífico Central",
-    "color_fill": "#a07040",
-    "color_title": "#5a3a18",
-    "provinces": ["CR-P"],
-    "destinos": [
-      {
-        "name": "Catarata de Montezuma",
-        "tipo": "b-oculta",
-        "badge": "Joya Oculta",
-        "costo": "Gratuito",
-        "desc": "30 min caminando desde Montezuma"
-      },
-      {
-        "name": "Playa Dominical",
-        "tipo": "b-reciente",
-        "badge": "Recién Descubierto",
-        "costo": "Gratuito",
-        "desc": "Playa de surf, ambiente joven"
-      },
-      {
-        "name": "P.N. Marino Ballena",
-        "tipo": "b-clasico",
-        "badge": "Clásico Imperdible",
-        "costo": "~₡3.000",
-        "desc": "Cola de ballena, ballenas jorobadas"
-      },
-      {
-        "name": "Alturas Wildlife Sanctuary",
-        "tipo": "b-oculta",
-        "badge": "Joya Oculta",
-        "costo": "~$20",
-        "desc": "Santuario cerca de Uvita"
-      }
-    ]
-  },
-  "huetar_atlantica": {
-    "label": "Región Huetar Atlántica",
-    "color_fill": "#3aa0d8",
-    "color_title": "#1a5a80",
-    "provinces": ["CR-L"],
-    "destinos": [
-      {
-        "name": "Parque Nacional Cahuita",
-        "tipo": "b-clasico",
-        "badge": "Clásico Imperdible",
-        "costo": "Donación voluntaria",
-        "desc": "Playa, arrecife de coral, sendero costero"
-      },
-      {
-        "name": "Punta Uva y Manzanillo",
-        "tipo": "b-oculta",
-        "badge": "Joya Oculta",
-        "costo": "Gratuito",
-        "desc": "Playa virgen y sendero natural"
-      },
-      {
-        "name": "Tortuguero",
-        "tipo": "b-fuera",
-        "badge": "Fuera del Circuito",
-        "costo": "~₡3.000",
-        "desc": "Canales navegables y anidación de tortugas"
-      }
-    ]
+/**
+ * <app-header>
+ * Barra de navegación principal de la guía turística.
+ *
+ * Responsabilidades:
+ *   - Mostrar el nombre/identidad de la guía.
+ *   - Renderizar un menú de regiones.
+ *   - Emitir CustomEvent('region-selected') con { region } al hacer clic.
+ *   - Resaltar la región activa mediante el atributo observado `active-region`.
+ *
+ * Estilos completamente encapsulados con Shadow DOM.
+ *
+ * Uso:
+ *   <app-header active-region="Todos"></app-header>
+ *
+ *   // Opcional: definir las regiones desde el JSON (fuente única de datos)
+ *   document.querySelector('app-header').regiones = ['Huetar Caribe', 'Central', ...];
+ */
+class AppHeader extends HTMLElement {
+  // ── Atributos observados ────────────────────────────────────────────────
+  static get observedAttributes() {
+    return ['active-region'];
   }
-};
 
-// ── Tooltip ──────────────────────────────────────────────────────────────────
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    // Regiones por defecto; pueden sobrescribirse con la propiedad `regiones`.
+    this._regiones = ['Todos', 'Huetar Caribe', 'Huetar Norte', 'Central', 'Chorotega'];
+  }
 
-function buildTooltip(region) {
-  const d = regionData[region];
-  let html = `<div class="tt-region-label" style="color:${d.color_title}">${d.label}</div>`;
-  html += `<div class="tt-title" style="color:${d.color_title}">Destinos turísticos</div>`;
-  d.destinos.forEach(dest => {
-    html += `<div class="dest">
-      <span class="badge ${dest.tipo}">${dest.badge}</span>
-      <div>
-        <div class="dest-name">${dest.name}</div>
-        <div class="dest-info">${dest.costo} · ${dest.desc}</div>
+  // ── API pública ───────────────────────────────────────────────────────────
+  /**
+   * Define la lista de regiones del menú. Se antepone siempre "Todos".
+   * @param {string[]} arr - Nombres de región (idealmente derivados del JSON)
+   */
+  set regiones(arr) {
+    if (Array.isArray(arr) && arr.length) {
+      this._regiones = ['Todos', ...arr];
+      if (this.shadowRoot.innerHTML !== '') {
+        this._render();
+        this._bindEvents();
+      }
+    }
+  }
+  get regiones() { return this._regiones; }
+
+  get activeRegion() { return this.getAttribute('active-region') || 'Todos'; }
+
+  // ── Ciclo de vida ───────────────────────────────────────────────────────
+  connectedCallback() {
+    this._render();
+    this._bindEvents();
+  }
+
+  attributeChangedCallback(name, oldVal, newVal) {
+    if (name === 'active-region' && oldVal !== newVal && this.shadowRoot.innerHTML !== '') {
+      this._updateActive();
+    }
+  }
+
+  // ── Render ──────────────────────────────────────────────────────────────
+  _render() {
+    const activa = this.activeRegion;
+
+    const botones = this._regiones.map(region => `
+      <button class="nav-link${region === activa ? ' active' : ''}"
+              data-region="${region}"
+              aria-pressed="${region === activa}">
+        ${region}
+      </button>
+    `).join('');
+
+    this.shadowRoot.innerHTML = `
+      <style>
+        :host {
+          display: block;
+          position: sticky;
+          top: 0;
+          z-index: 100;
+          font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        .bar {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 16px;
+          flex-wrap: wrap;
+          padding: 12px 24px;
+          background: rgba(26, 66, 8, 0.92);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          box-shadow: 0 2px 16px rgba(0, 0, 0, 0.22);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* ── Marca ── */
+        .brand {
+          display: flex;
+          align-items: center;
+          gap: 9px;
+          color: #fff;
+          font-weight: 700;
+          font-size: 1.02rem;
+          letter-spacing: 0.01em;
+          white-space: nowrap;
+        }
+        .brand .logo {
+          font-size: 1.3rem;
+          line-height: 1;
+        }
+        .brand small {
+          display: block;
+          font-size: 0.62rem;
+          font-weight: 600;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          color: #a7c98f;
+        }
+
+        /* ── Menú de regiones ── */
+        nav {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          flex-wrap: wrap;
+        }
+        .nav-link {
+          font: inherit;
+          font-size: 0.82rem;
+          font-weight: 600;
+          color: #e4eddc;
+          background: transparent;
+          border: 1px solid transparent;
+          border-radius: 99px;
+          padding: 6px 14px;
+          cursor: pointer;
+          transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+          white-space: nowrap;
+        }
+        .nav-link:hover {
+          background: rgba(255, 255, 255, 0.12);
+          color: #fff;
+        }
+        .nav-link:focus-visible {
+          outline: 2px solid #e8a020;
+          outline-offset: 2px;
+        }
+        .nav-link.active {
+          background: #e8a020;
+          color: #1a1200;
+          border-color: #e8a020;
+        }
+
+        @media (max-width: 600px) {
+          .bar { padding: 10px 14px; }
+          nav { width: 100%; justify-content: flex-start; overflow-x: auto; }
+          .nav-link { padding: 6px 11px; font-size: 0.78rem; }
+        }
+      </style>
+
+      <div class="bar">
+        <div class="brand">
+          <span class="logo" aria-hidden="true">🌿</span>
+          <span>
+            Guía Turística CR
+            <small>Costa Rica</small>
+          </span>
+        </div>
+
+        <nav aria-label="Filtrar destinos por región">
+          ${botones}
+        </nav>
       </div>
-    </div>`;
-  });
-  return html;
-}
+    `;
+  }
 
-function posTooltip(tip, e) {
-  const tw = tip.offsetWidth || 300;
-  const th = tip.offsetHeight || 180;
-  let x = e.clientX + 18;
-  let y = e.clientY - 16;
-  if (x + tw > window.innerWidth - 12) x = e.clientX - tw - 18;
-  if (y + th > window.innerHeight - 12) y = window.innerHeight - th - 12;
-  if (y < 8) y = 8;
-  tip.style.left = x + 'px';
-  tip.style.top = y + 'px';
-}
-
-// ── Init ─────────────────────────────────────────────────────────────────────
-
-function initMap() {
-  const tip = document.getElementById('tooltip');
-
-  document.querySelectorAll('.province[data-region]').forEach(el => {
-    const region = el.dataset.region;
-
-    el.addEventListener('mouseenter', e => {
-      tip.innerHTML = buildTooltip(region);
-      tip.classList.add('show');
-      posTooltip(tip, e);
+  // ── Eventos ─────────────────────────────────────────────────────────────
+  _bindEvents() {
+    this.shadowRoot.querySelectorAll('.nav-link').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const region = btn.dataset.region;
+        // Reflejar la selección en el propio atributo observado.
+        this.setAttribute('active-region', region);
+        // Notificar al resto de la aplicación.
+        this.dispatchEvent(new CustomEvent('region-selected', {
+          bubbles: true,
+          composed: true,        // Atraviesa el Shadow DOM
+          detail: { region }
+        }));
+      });
     });
-    el.addEventListener('mousemove', e => posTooltip(tip, e));
-    el.addEventListener('mouseleave', () => tip.classList.remove('show'));
-  });
+  }
+
+  // Actualiza el resaltado sin re-renderizar todo el componente.
+  _updateActive() {
+    const activa = this.activeRegion;
+    this.shadowRoot.querySelectorAll('.nav-link').forEach(btn => {
+      const esActiva = btn.dataset.region === activa;
+      btn.classList.toggle('active', esActiva);
+      btn.setAttribute('aria-pressed', String(esActiva));
+    });
+  }
 }
 
-// Run after DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initMap);
-} else {
-  initMap();
-}
+customElements.define('app-header', AppHeader);
