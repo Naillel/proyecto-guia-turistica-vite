@@ -8,7 +8,7 @@
  *   label — texto descriptivo del audio
  *
  * Uso:
- *   <audio-guia src="assets/audio/guia.mp3" label="Guía de Cahuita"></audio-guia>
+ *   <audio-guia src="assets/audio/RioCeleste-Guia.mp3" label="Guía de Río Celeste"></audio-guia>
  */
 class AudioGuia extends HTMLElement {
   static get observedAttributes() {
@@ -18,9 +18,9 @@ class AudioGuia extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
-    this._playing   = false;
-    this._duration  = 0;
-    this._current   = 0;
+    this._playing  = false;
+    this._duration = 0;
+    this._current  = 0;
   }
 
   // ── Ciclo de vida ───────────────────────────────────────────────────────
@@ -74,7 +74,6 @@ class AudioGuia extends HTMLElement {
           display: block;
           font-family: 'Segoe UI', system-ui, sans-serif;
         }
-
         .ag-wrap {
           background: linear-gradient(135deg, #1a2a1a 0%, #0f1f0f 100%);
           border-radius: 14px;
@@ -84,7 +83,6 @@ class AudioGuia extends HTMLElement {
           gap: 10px;
           box-shadow: 0 4px 18px rgba(0,0,0,0.18);
         }
-
         /* ── Encabezado ── */
         .ag-header {
           display: flex;
@@ -119,10 +117,7 @@ class AudioGuia extends HTMLElement {
           text-transform: uppercase;
           color: #5a8a5a;
         }
-        .ag-status.playing {
-          color: #7dd87d;
-        }
-
+        .ag-status.playing { color: #7dd87d; }
         /* ── Controles ── */
         .ag-controls {
           display: flex;
@@ -147,7 +142,6 @@ class AudioGuia extends HTMLElement {
         .ag-play-btn:hover  { background: #6fa336; transform: scale(1.07); }
         .ag-play-btn:active { transform: scale(0.96); }
         .ag-play-btn svg    { pointer-events: none; }
-
         /* ── Barra de progreso ── */
         .ag-progress-wrap {
           flex: 1;
@@ -178,17 +172,13 @@ class AudioGuia extends HTMLElement {
           color: rgba(255,255,255,0.35);
           font-variant-numeric: tabular-nums;
         }
-
         /* ── Volumen ── */
         .ag-volume-wrap {
           display: flex;
           align-items: center;
           gap: 6px;
         }
-        .ag-vol-icon {
-          color: #5a8a5a;
-          flex-shrink: 0;
-        }
+        .ag-vol-icon { color: #5a8a5a; flex-shrink: 0; }
         input[type="range"].ag-volume {
           -webkit-appearance: none;
           appearance: none;
@@ -215,7 +205,6 @@ class AudioGuia extends HTMLElement {
           border: none;
           cursor: pointer;
         }
-
         /* Sin src */
         .ag-no-src {
           text-align: center;
@@ -241,13 +230,10 @@ class AudioGuia extends HTMLElement {
 
           <div class="ag-controls">
             <button class="ag-play-btn" aria-label="Reproducir audio">
-              <!-- Ícono de play inicial -->
-              <svg class="icon-play" width="18" height="18" viewBox="0 0 24 24"
-                   fill="currentColor">
+              <svg class="icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <polygon points="5,3 19,12 5,21"/>
               </svg>
-              <svg class="icon-pause" width="18" height="18" viewBox="0 0 24 24"
-                   fill="currentColor" style="display:none">
+              <svg class="icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none">
                 <rect x="6" y="4" width="4" height="16"/>
                 <rect x="14" y="4" width="4" height="16"/>
               </svg>
@@ -281,7 +267,6 @@ class AudioGuia extends HTMLElement {
             </div>
           </div>
 
-          <!-- Elemento de audio nativo (dentro del Shadow DOM) -->
           <audio preload="metadata" src="${src}"></audio>
         `}
       </div>
@@ -290,14 +275,14 @@ class AudioGuia extends HTMLElement {
 
   // ── Eventos ─────────────────────────────────────────────────────────────
   _bindEvents() {
-    const audio      = this.shadowRoot.querySelector('audio');
-    const playBtn    = this.shadowRoot.querySelector('.ag-play-btn');
-    const track      = this.shadowRoot.querySelector('.ag-progress-track');
-    const fill       = this.shadowRoot.querySelector('.ag-progress-fill');
-    const timeCur    = this.shadowRoot.querySelector('.time-current');
-    const timeTotal  = this.shadowRoot.querySelector('.time-total');
-    const status     = this.shadowRoot.querySelector('.ag-status');
-    const volSlider  = this.shadowRoot.querySelector('.ag-volume');
+    const audio     = this.shadowRoot.querySelector('audio');
+    const playBtn   = this.shadowRoot.querySelector('.ag-play-btn');
+    const track     = this.shadowRoot.querySelector('.ag-progress-track');
+    const fill      = this.shadowRoot.querySelector('.ag-progress-fill');
+    const timeCur   = this.shadowRoot.querySelector('.time-current');
+    const timeTotal = this.shadowRoot.querySelector('.time-total');
+    const status    = this.shadowRoot.querySelector('.ag-status');
+    const volSlider = this.shadowRoot.querySelector('.ag-volume');
 
     if (!audio || !playBtn) return;
 
@@ -342,7 +327,7 @@ class AudioGuia extends HTMLElement {
     audio.addEventListener('timeupdate', () => {
       this._current = audio.currentTime;
       const pct = this._duration ? (this._current / this._duration) * 100 : 0;
-      if (fill)    fill.style.width  = `${pct}%`;
+      if (fill)    fill.style.width = `${pct}%`;
       if (track)   track.setAttribute('aria-valuenow', Math.round(pct));
       if (timeCur) timeCur.textContent = this._fmt(this._current);
     });
@@ -371,8 +356,8 @@ class AudioGuia extends HTMLElement {
     const btn       = this.shadowRoot.querySelector('.ag-play-btn');
 
     if (!iconPlay || !iconPause) return;
-    iconPlay.style.display  = this._playing ? 'none'  : '';
-    iconPause.style.display = this._playing ? ''      : 'none';
+    iconPlay.style.display  = this._playing ? 'none' : '';
+    iconPause.style.display = this._playing ? ''     : 'none';
     if (btn) btn.setAttribute('aria-label',
       this._playing ? 'Pausar audio' : 'Reproducir audio');
   }
