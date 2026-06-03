@@ -6,9 +6,9 @@
  * Estilos completamente encapsulados con Shadow DOM.
  */
 class DestinoCard extends HTMLElement {
-  // ── Atributos observados ────────────────────────────────────────────────
+
   static get observedAttributes() {
-    return ['destino-id', 'nombre', 'imagen', 'region'];
+    return ["destino-id", "nombre", "imagen", "region"];
   }
 
   constructor() {
@@ -47,7 +47,7 @@ class DestinoCard extends HTMLElement {
       'Huetar Caribe':     { bg: '#e0f3fa', badge: '#3aa0d8', text: '#1a5a80' },
       'Huetar Atlantica':  { bg: '#e0f3fa', badge: '#3aa0d8', text: '#1a5a80' },
     };
-      'Huetar Caribe':     { bg: '#e0f3fa', badge: '#3aa0d8', text: '#1a5a80' },    };
+    
     const color = regionColors[this.region] || { bg: '#f0f0f0', badge: '#666', text: '#333' };
 
     this.shadowRoot.innerHTML = `
