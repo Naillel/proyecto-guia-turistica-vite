@@ -1,29 +1,6 @@
 {
   "destinos": [
     {
-      "id": "Cahuita-001",
-      "nombre": "Cahuita",
-      "region": "Huetar Atlantica",
-      "descripcion": "Un paraíso caribeño donde la selva tropical se encuentra con el mar cristalino. Cahuita es un pueblo tranquilo con un parque nacional que alberga playas vírgenes, arrecifes de coral y una biodiversidad increíble. Perfecto para los amantes del snorkel y la naturaleza en estado puro.",
-      "imagen_portada": "assets/img/cahuita-1.png",
-      "galeria": [
-        "assets/img/cahuita-1.png",
-        "assets/img/cahuita-2.png",
-        "assets/img/cahuita-3.png"
-      ],
-      "audio": "assets/audio/cahuita-guia.mp3",
-      "video": "assets/video/cahuita.mp4",
-      "actividades": [
-        "Snorkel en el arrecife de coral",
-        "Caminatas por el Parque Nacional Cahuita",
-        "Avistamiento de perezosos y monos",
-        "Buceo en aguas cristalinas",
-        "Degustación de cocina afrocaribeña"
-      ],
-      "lat": 9.7319,
-      "lng": -82.8458
-    },
-    {
       "id": "norte-001",
       "nombre": "Río Celeste",
       "region": "Huetar Norte",
@@ -34,7 +11,7 @@
         "assets/img/rio-celeste-02.jpg",
         "assets/img/rio-celeste-03.jpg"
       ],
-      "audio": "assets/audio/rio-celeste-guia.mpeg",
+      "audio": "assets/audio/RioCeleste-Guia.mp3",
       "video": "assets/video/rio-celeste.mp4",
       "actividades": [
         "Caminata hasta la catarata celeste",
@@ -57,7 +34,7 @@
         "assets/img/quebrada-gata-02.jpg",
         "assets/img/quebrada-gata-03.jpg"
       ],
-      "audio": "assets/audio/quebrada-gata-guia.mpeg",
+      "audio": "assets/audio/QuebradaGata-Guia.mp3",
       "video": "assets/video/quebrada-gata.mp4",
       "actividades": [
         "Senderismo en bosque lluvioso",
@@ -80,7 +57,7 @@
         "assets/img/tortuguero-02.jpg",
         "assets/img/tortuguero-03.jpg"
       ],
-      "audio": "assets/audio/tortuguero-guia.mpeg",
+      "audio": "assets/audio/Tortuguero-Guia.mp3",
       "video": "assets/video/tortuguero.mp4",
       "actividades": [
         "Tour nocturno de desove de tortugas",
@@ -103,7 +80,7 @@
         "assets/img/manzanillo-02.jpg",
         "assets/img/manzanillo-03.jpg"
       ],
-      "audio": "assets/audio/manzanillo-guia.mpeg",
+      "audio": "assets/audio/Manzanillo-Guia.mp3",
       "video": "assets/video/manzanillo.mp4",
       "actividades": [
         "Snorkel y buceo en el arrecife de coral",
@@ -126,7 +103,7 @@
         "assets/img/parque-quetzales-02.jpg",
         "assets/img/parque-quetzales-03.jpg"
       ],
-      "audio": "assets/audio/parque-quetzales-guia.mpeg",
+      "audio": "assets/audio/ParqueLosQuetzales-Guia.mp3",
       "video": "assets/video/parque-quetzales.mp4",
       "actividades": [
         "Avistamiento del quetzal resplandeciente",
@@ -149,7 +126,7 @@
         "assets/img/sanatorio-duran-02.jpg",
         "assets/img/sanatorio-duran-03.jpg"
       ],
-      "audio": "assets/audio/sanatorio-duran-guia.mpeg",
+      "audio": "assets/audio/SanatorioDuran-Guia.mp3",
       "video": "assets/video/sanatorio-duran.mp4",
       "actividades": [
         "Recorrido histórico por las ruinas",
@@ -172,7 +149,7 @@
         "assets/img/ecomuseo-abangares-02.jpg",
         "assets/img/ecomuseo-abangares-03.jpg"
       ],
-      "audio": "assets/audio/ecomuseo-abangares-guia.mpeg",
+      "audio": "assets/audio/EcomuseoAbangares-Guia.mp3",
       "video": "assets/video/ecomuseo-abangares.mp4",
       "actividades": [
         "Recorrido por túneles mineros históricos",
@@ -195,7 +172,7 @@
         "assets/img/las-pumas-02.jpg",
         "assets/img/las-pumas-03.jpg"
       ],
-      "audio": "assets/audio/las-pumas-guia.mpeg",
+      "audio": "assets/audio/LasPumas-Guia.mp3",
       "video": "assets/video/las-pumas.mp4",
       "actividades": [
         "Avistamiento de jaguares, pumas y ocelotes",
