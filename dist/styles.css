@@ -36,8 +36,8 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.35) 0%,
-    rgba(10, 30, 5, 0.60) 100%
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.72) 100%
   );
   z-index: -1;
 }
@@ -54,7 +54,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.04);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   color: #fff;
@@ -64,7 +64,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 1.4rem;
-  border: 1px solid rgba(255,255,255,0.30);
+  border: 1px solid rgba(255,255,255,0.08);
   font-family: var(--font-ui);
 }
 
@@ -88,7 +88,7 @@
 .app-subtitle {
   font-family: var(--font-stack);
   font-size: clamp(1rem, 2.5vw, 1.3rem);
-  color: rgba(255,255,255,0.88);
+  color: rgba(230,238,248,0.92);
   font-style: italic;
   text-shadow: 1px 2px 6px rgba(0,0,0,0.45);
 }
@@ -154,10 +154,10 @@
   font-family: var(--font-ui);
   font-size: 0.78rem;
   color: var(--text-muted);
-  background: var(--bg-surface);
+  background: rgba(255,255,255,0.02);
   padding: 0.2rem 0.7rem;
   border-radius: 20px;
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255,255,255,0.04);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -176,7 +176,7 @@ destino-card {
   overflow: hidden;
   transition: transform 0.22s ease, box-shadow 0.22s ease;
   box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255,255,255,0.04);
 }
 
 destino-card:hover {
@@ -208,7 +208,7 @@ destino-card.flash {
 
 .sandbox-card {
   background: var(--bg-surface);
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255,255,255,0.04);
   border-radius: var(--radius-lg);
   padding: 1.5rem;
   box-shadow: var(--shadow-sm);
@@ -232,12 +232,12 @@ destino-card.flash {
   max-width: 1000px;
   margin: 0 auto;
   padding: 1.5rem;
-  background: rgba(255,255,255,0.94);
+  background: rgba(10,12,14,0.6);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
-  border: 1px solid rgba(255,255,255,0.5);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .map-header {
@@ -273,8 +273,8 @@ destino-card.flash {
   width: 100%;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: #eef2ea;
-  border: 1px solid rgba(56,107,32,0.12);
+  background: var(--bg-muted);
+  border: 1px solid rgba(255,255,255,0.03);
 }
 
 .map-wrap {
@@ -354,12 +354,12 @@ destino-card.flash {
   height: 50px;
   border-radius: 50%;          /* burbuja redonda */
   overflow: hidden;
-  background: #bfe0ad;
-  border: 2px solid rgba(255,255,255,0.75);
+  background: #95c76a;
+  border: 2px solid rgba(255,255,255,0.06);
   box-shadow:
-    0 10px 20px rgba(20,50,10,0.32),
-    inset 0 3px 7px rgba(255,255,255,0.55),
-    inset 0 -7px 12px rgba(20,60,10,0.28);
+    0 10px 20px rgba(0,0,0,0.6),
+    inset 0 3px 7px rgba(255,255,255,0.06),
+    inset 0 -7px 12px rgba(0,0,0,0.28);
   animation: dropFloat 3s ease-in-out infinite;
 }
 #map-drops .drop:nth-child(2n) .drop-bubble { animation-duration: 3.7s; }
@@ -397,12 +397,12 @@ destino-card.flash {
 /* etiqueta del nombre bajo la gota */
 #map-drops .drop-name {
   font: 700 10.5px var(--font-ui);
-  color: #11380a;
-  background: rgba(255,255,255,0.92);
+  color: var(--text-main);
+  background: rgba(0,0,0,0.45);
   border-radius: 99px;
   padding: 2px 8px;
   white-space: nowrap;
-  box-shadow: 0 2px 7px rgba(0,0,0,0.18);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
 @keyframes dropIn {
