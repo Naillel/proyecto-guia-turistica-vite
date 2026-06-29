@@ -49,14 +49,14 @@
     },
     {
       "id": "norte-002",
-      "nombre": "Quebrada Gata",
+      "nombre": "Quebrada Gata y Río Barroso",
       "region": "Huetar Norte",
       "descripcion": "Una joya escondida entre la selva tropical de la zona norte. Quebrada Gata es un refugio natural en Venecia de San Carlos donde el bosque lluvioso se mantiene casi intacto. Sus aguas frescas, las pozas naturales y la abundante fauna del sotobosque la convierten en el destino ideal para quienes buscan aventura auténtica lejos del turismo masivo.",
-      "imagen_portada": "assets/img/virador-1.png",
+      "imagen_portada": "assets/img/Quebrada-Gata1.jpeg",
       "galeria": [
-        "assets/img/virador-1.png",
-        "assets/img/virador-2.png",
-        "assets/img/virador-3.png"
+        "assets/img/Quebrada-Gata1.jpeg",
+        "assets/img/Quebrada-Gata2.jpeg",
+        "assets/img/Quebrada-Gata3.jpeg"
       ],
       "audio": "assets/audio/QuebradaGata-Guia.mp3",
       "video": "assets/video/quebrada-gata.mp4",
@@ -170,11 +170,11 @@
       "nombre": "Ecomuseo de las Minas de Abangares",
       "region": "Chorotega",
       "descripcion": "Un viaje al pasado dorado de Costa Rica entre bosque seco y huellas de la fiebre del oro. El Ecomuseo de Abangares conserva túneles, herramientas y maquinaria de las minas que a finales del siglo XIX atrajeron a aventureros de todo el mundo. Hoy las comunidades locales son las guías, ofreciendo senderos interpretativos y la memoria viva de esta historia única.",
-      "imagen_portada": "assets/img/Montezuma-1.png",
+      "imagen_portada": "assets/img/Ecomuseo1.jpeg",
       "galeria": [
-        "assets/img/Montezuma-1.png",
-        "assets/img/Montezuma-2.png",
-        "assets/img/Montezuma-3.png"
+        "assets/img/Ecomuseo2.jpeg",
+        "assets/img/Ecomuseo3.jpeg",
+        "assets/img/Ecomuseo4.jpeg"
       ],
       "audio": "assets/audio/EcomuseoAbangares-Guia.mp3",
       "video": "assets/video/ecomuseo-abangares.mp4",
@@ -195,9 +195,9 @@
       "descripcion": "Un refugio de rescate único en Cañas donde puedes conocer de cerca a los grandes felinos de Costa Rica. Las Pumas alberga jaguares, pumas, ocelotes, jaguarundis y margays rescatados que no pueden volver a la vida silvestre. Una experiencia educativa imprescindible para entender la conservación de la fauna y el valor del bosque seco tropical.",
       "imagen_portada": "assets/img/lasPumas-1.jpg",
       "galeria": [
-        "assets/img/lasPumas-1.jpg",
         "assets/img/lasPumas-2.jpg",
-        "assets/img/lasPumas-3.jpg"
+        "assets/img/lasPumas-3.jpg",
+        "assets/img/lasPumas-4.jpeg"
       ],
       "audio": "assets/audio/LasPumas-Guia.mp3",
       "video": "assets/video/las-pumas.mp4",
@@ -206,7 +206,7 @@
         "Tour educativo de conservación felina",
         "Charlas sobre rescate de fauna silvestre",
         "Fotografía de felinos del bosque seco",
-        "Visita combinada con el Parque Palo Verde"
+        "Visita guiada por cuidadores y veterinarios del refugio"
       ],
       "lat": 10.4358,
       "lng": -85.1003
