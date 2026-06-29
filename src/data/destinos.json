@@ -28,8 +28,9 @@
       "nombre": "Río Celeste",
       "region": "Huetar Norte",
       "descripcion": "Un milagro de la naturaleza escondido en el corazón del volcán Tenorio. El Río Celeste sorprende con su agua de un increíble color azul turquesa, fruto del encuentro mágico de dos ríos al pie del volcán. Senderos entre bosque lluvioso, cataratas espectaculares y aguas termales hacen de este lugar uno de los rincones más fotografiados de Costa Rica.",
-      "imagen_portada": "assets/img/Rio_celeste-1.png",
+      "imagen_portada": "assets/img/Rio_celeste.png",
       "galeria": [
+        "assets/img/Rio_celeste.png",
         "assets/img/Rio_celeste-1.png",
         "assets/img/Rio_celeste-2.png",
         "assets/img/Rio_celeste-3.png"
@@ -74,11 +75,13 @@
       "nombre": "Tortuguero",
       "region": "Huetar Caribe",
       "descripcion": "Un santuario natural al que solo se llega en bote o avioneta. Tortuguero es famoso mundialmente por el desove de la tortuga verde entre julio y octubre, cuando miles de hembras llegan a la playa donde nacieron. Sus canales selváticos esconden caimanes, manatíes, perezosos y más de 400 especies de aves en uno de los ecosistemas más biodiversos del planeta.",
-      "imagen_portada": "assets/img/Tortuguero-1.png",
+      "imagen_portada": "assets/img/Tortuguero.png",
       "galeria": [
+        "assets/img/Tortuguero.png",
         "assets/img/Tortuguero-1.png",
         "assets/img/Tortuguero-2.png",
-        "assets/img/Tortuguero-3.png"
+        "assets/img/Tortuguero-3.png",
+        "assets/img/Tortuguero-4.png"
       ],
       "audio": "assets/audio/Tortuguero-Guia.mp3",
       "video": "assets/video/tortuguero.mp4",
@@ -97,11 +100,11 @@
       "nombre": "Manzanillo",
       "region": "Huetar Caribe",
       "descripcion": "El Refugio Nacional Gandoca-Manzanillo protege el sistema arrecifal más extenso y mejor conservado de Costa Rica. Bajo sus aguas coexisten más de 30 especies de coral, tortugas carey y delfines nariz de botella. En tierra, el bosque costero alberga jaguares y tapires, creando una transición única entre el mar y la selva separados por apenas unos metros.",
-      "imagen_portada": "assets/img/Bahia_drake-1.png",
+      "imagen_portada": "assets/img/Manzanillo-2.png",
       "galeria": [
-        "assets/img/Bahia_drake-1.png",
-        "assets/img/Bahia_drake-2.png",
-        "assets/img/Bahia_drake-3.png"
+        "assets/img/Manzanillo-1.png",
+        "assets/img/Manzanillo-2.png",
+        "assets/img/Manzanillo-3.png"
       ],
       "audio": "assets/audio/Manzanillo-Guia.mp3",
       "video": "assets/video/manzanillo.mp4",
@@ -120,11 +123,11 @@
       "nombre": "Parque Los Quetzales",
       "region": "Central",
       "descripcion": "Un bosque nuboso mágico en las alturas de la Cordillera de Talamanca donde habita una de las aves más bellas del mundo: el quetzal resplandeciente. Entre robledales cubiertos de musgo, neblina constante y temperaturas frescas, este parque ofrece la mejor oportunidad para observar quetzales y disfrutar de paisajes de montaña a más de 2.600 metros de altura.",
-      "imagen_portada": "assets/img/Monteverde-1.png",
+      "imagen_portada": "assets/img/LosQuetzales.png",
       "galeria": [
-        "assets/img/Monteverde-1.png",
-        "assets/img/Monteverde-2.png",
-        "assets/img/Monteverde-3.png"
+        "assets/img/LosQuetzales-1.png",
+        "assets/img/LosQuetzales-2.png",
+        "assets/img/LosQuetzales-3.png"
       ],
       "audio": "assets/audio/ParqueLosQuetzales-Guia.mp3",
       "video": "assets/video/parque-quetzales.mp4",
@@ -143,11 +146,12 @@
       "nombre": "Sanatorio Durán",
       "region": "Central",
       "descripcion": "Construido en 1915 en las faldas del volcán Irazú, el Sanatorio Durán fue escogido por su altitud: el aire frío del bosque nuboso era el tratamiento estándar para la tuberculosis en la medicina de la época. Hoy es un testigo material de cómo el ecosistema de altura moldeó decisiones humanas históricas, y uno de los destinos de turismo cultural más visitados de Cartago.",
-      "imagen_portada": "assets/img/orosi-1.png",
+      "imagen_portada": "assets/img/SanatorioDuran.png",
       "galeria": [
-        "assets/img/orosi-1.png",
-        "assets/img/orosi-2.png",
-        "assets/img/orosi-3.png"
+        "assets/img/SanatorioDuran.png",
+        "assets/img/SanatorioDuran-1.png",
+        "assets/img/SanatorioDuran-2.png",
+        "assets/img/SanatorioDuran-3.png"
       ],
       "audio": "assets/audio/SanatorioDuran-Guia.mp3",
       "video": "assets/video/sanatorio-duran.mp4",
