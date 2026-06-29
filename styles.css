@@ -1,0 +1,503 @@
+/* ═══════════════════════════════════════════════════════════════
+   GUÍA TURÍSTICA DE COSTA RICA · styles.css
+   Separado del index.html para seguir buenas prácticas de
+   separación de responsabilidades (HTML / CSS / JS).
+   ═══════════════════════════════════════════════════════════════ */
+
+/* El reset, las variables de tema (:root) y la tipografía base
+   viven en css/global.css (se carga antes que este archivo). */
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO HEADER CON VIDEO DE FONDO
+   ═══════════════════════════════════════════════════════════════ */
+.hero-header {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 3.5rem;
+  color: #ffffff;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 1.5rem;
+  max-width: 860px;
+}
+
+/* Pill badge sobre el título */
+.app-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #fff;
+  padding: 0.35rem 1rem;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  font-family: var(--font-ui);
+}
+
+.app-badge::before {
+  content: '🌿';
+  font-size: 0.85rem;
+}
+
+/* Título principal */
+.app-title {
+  font-family: var(--font-stack);
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: normal;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  text-shadow: 2px 4px 12px rgba(0,0,0,0.55);
+}
+
+/* Subtítulo */
+.app-subtitle {
+  font-family: var(--font-stack);
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: rgba(230,238,248,0.92);
+  font-style: italic;
+  text-shadow: 1px 2px 6px rgba(0,0,0,0.45);
+}
+
+/* Botón CTA en el hero */
+.hero-cta {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 2rem;
+  background: var(--accent);
+  color: #1a1200;
+  border-radius: 100px;
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.30);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CONTENEDOR Y SECCIONES
+   ═══════════════════════════════════════════════════════════════ */
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+.section {
+  margin-bottom: 4rem;
+}
+
+/* Cabecera de sección */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.section-counter {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.02);
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   GRID DE TARJETAS
+   ═══════════════════════════════════════════════════════════════ */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+destino-card {
+  display: block;
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+destino-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Resalte al llegar desde un destino del mapa */
+destino-card.flash {
+  animation: cardFlash 1.6s ease;
+}
+@keyframes cardFlash {
+  0%, 100% { outline: 0 solid rgba(232,160,32,0);  outline-offset: 3px; }
+  18%, 55% { outline: 4px solid var(--accent);     outline-offset: 3px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SANDBOX (PRUEBAS DE COMPONENTES AISLADOS)
+   ═══════════════════════════════════════════════════════════════ */
+.sandbox-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+@media (max-width: 680px) {
+  .sandbox-layout { grid-template-columns: 1fr; }
+}
+
+.sandbox-card {
+  background: var(--bg-surface);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.sandbox-label {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SECCIÓN DEL MAPA
+   ═══════════════════════════════════════════════════════════════ */
+.app-map-card {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: rgba(10,12,14,0.6);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.map-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.2rem;
+}
+
+.map-title {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.map-copy {
+  font-family: var(--font-ui);
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  max-width: 560px;
+}
+
+/* Contenedor del SVG */
+.cr-map {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-muted);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.map-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* SVG del mapa */
+.cr-map svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 3px 16px rgba(0,0,0,0.12));
+}
+
+/* Provincias interactivas */
+.province {
+  cursor: pointer;
+  fill: #5a8a2e;                 /* todas las regiones del mismo verde */
+  stroke: #294a12;               /* divisiones (bordes) más oscuras */
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+  transition: filter 0.18s ease;
+}
+
+/* Glow al pasar el cursor por la región */
+.province:hover {
+  filter: brightness(1.18) saturate(1.1) drop-shadow(0 0 6px rgba(150,220,90,0.7));
+}
+
+/* Región resaltada mientras se muestran sus gotas */
+.province.selected {
+  filter: brightness(1.26) saturate(1.15) drop-shadow(0 0 9px rgba(150,220,90,0.85));
+}
+
+/* Nombre de la región encima del mapa */
+.region-label {
+  fill: #ffffff;
+  stroke: #1f3d0e;
+  stroke-width: 3px;
+  paint-order: stroke;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+/* ── GOTAS FLOTANTES DE DESTINOS (al pasar el cursor por una región) ── */
+#map-drops {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  pointer-events: none;        /* la capa no bloquea; cada gota sí */
+}
+
+/* Contenedor de la gota: hace la entrada y centra burbuja + nombre */
+#map-drops .drop {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  pointer-events: auto;
+  cursor: pointer;
+  opacity: 0;
+  animation: dropIn 0.5s cubic-bezier(.34,1.7,.5,1) forwards;
+  will-change: transform, opacity;
+}
+
+/* La burbuja: forma de gota, vidriosa, flotando en bucle */
+#map-drops .drop-bubble {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;          /* burbuja redonda */
+  overflow: hidden;
+  background: #95c76a;
+  border: 2px solid rgba(255,255,255,0.06);
+  box-shadow:
+    0 10px 20px rgba(0,0,0,0.6),
+    inset 0 3px 7px rgba(255,255,255,0.06),
+    inset 0 -7px 12px rgba(0,0,0,0.28);
+  animation: dropFloat 3s ease-in-out infinite;
+}
+#map-drops .drop:nth-child(2n) .drop-bubble { animation-duration: 3.7s; }
+#map-drops .drop:nth-child(3n) .drop-bubble { animation-duration: 2.6s; }
+
+#map-drops .drop-bubble img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* brillo tipo agua */
+#map-drops .drop-bubble::after {
+  content: '';
+  position: absolute;
+  top: 9%;
+  left: 15%;
+  width: 36%;
+  height: 28%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(255,255,255,0) 70%);
+  pointer-events: none;
+}
+
+#map-drops .drop:hover .drop-bubble,
+#map-drops .drop:focus-visible .drop-bubble {
+  animation-play-state: paused;
+  transform: scale(1.14);
+  box-shadow:
+    0 14px 28px rgba(20,50,10,0.42),
+    inset 0 3px 7px rgba(255,255,255,0.6);
+}
+#map-drops .drop:focus-visible { outline: none; }
+
+/* etiqueta del nombre bajo la gota */
+#map-drops .drop-name {
+  font: 700 10.5px var(--font-ui);
+  color: var(--text-main);
+  background: rgba(0,0,0,0.45);
+  border-radius: 99px;
+  padding: 2px 8px;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+@keyframes dropIn {
+  0%   { opacity: 0; transform: translate(-50%, calc(-50% + 26px)) scale(0.3); }
+  60%  { opacity: 1; }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+@keyframes dropFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-9px); }
+}
+
+/* ── MINI-GUÍA DE USO DEL MAPA ──────────────────────────────────── */
+.map-guide {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 18px;
+  margin-top: 1.3rem;
+}
+
+.guide-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-ui);
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}
+.guide-step strong { color: var(--primary); font-weight: 700; }
+
+.guide-icon { color: var(--primary); flex-shrink: 0; }
+
+.guide-sep {
+  width: 1px;
+  height: 16px;
+  background: var(--border-color);
+}
+@media (max-width: 520px) {
+  .guide-sep { display: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   OVERLAY / MODAL DE DETALLE
+   ═══════════════════════════════════════════════════════════════ */
+#overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 22, 12, 0.45);
+  z-index: 200;
+  overflow-y: auto;
+  padding: 3rem 1.5rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#overlay.visible {
+  display: flex;
+  animation: overlayFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+#overlay destino-detalle {
+  width: 100%;
+  max-width: 580px;
+  margin: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  animation: modalSlideUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalSlideUp {
+  from { transform: translateY(24px) scale(0.95); opacity: 0; }
+  to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .hero-header { min-height: 55vh; }
+  .cards-grid  { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+  .app-map-card { padding: 1rem; }
+  .map-header  { flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+  .cards-grid  { grid-template-columns: 1fr; }
+  .app-title   { font-size: 2rem; }
+}
