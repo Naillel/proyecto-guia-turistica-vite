@@ -1,29 +1,6 @@
 {
   "destinos": [
     {
-      "id": "cahuita-001",
-      "nombre": "Cahuita",
-      "region": "Huetar Caribe",
-      "descripcion": "Un paraíso caribeño donde la selva tropical se encuentra con el mar cristalino. Cahuita es un pueblo tranquilo con un parque nacional que alberga playas vírgenes, arrecifes de coral y una biodiversidad increíble. Perfecto para los amantes del snorkel y la naturaleza en estado puro.",
-      "imagen_portada": "assets/img/cahuita-1.png",
-      "galeria": [
-        "assets/img/cahuita-1.png",
-        "assets/img/cahuita-2.png",
-        "assets/img/cahuita-3.png"
-      ],
-      "audio": "assets/audio/cahuita-guia.mp3",
-      "video": "assets/video/cahuita.mp4",
-      "actividades": [
-        "Snorkel en el arrecife de coral",
-        "Caminatas por el Parque Nacional Cahuita",
-        "Avistamiento de perezosos y monos",
-        "Buceo en aguas cristalinas",
-        "Degustación de cocina afrocaribeña"
-      ],
-      "lat": 9.7319,
-      "lng": -82.8458
-    },
-    {
       "id": "norte-001",
       "nombre": "Río Celeste",
       "region": "Huetar Norte",

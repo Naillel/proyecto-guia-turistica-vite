@@ -278,9 +278,10 @@
 
     /** Cierra el modal de detalle */
     const cerrarModalDetalle = () => {
-      overlay.classList.remove('visible');
-      document.body.style.overflow = '';
-    };
+  overlay.classList.remove('visible');
+  document.body.style.overflow = '';
+  if (detalle) detalle.destino = null;   // ← desmonta el <audio-guia> y lo pausa
+};
 
     document.addEventListener('detalle-cerrado', cerrarModalDetalle);
 
