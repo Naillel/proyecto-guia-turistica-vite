@@ -70,11 +70,11 @@ class DestinoDetalle extends HTMLElement {
         :host {
           display: block;
           font-family: 'Segoe UI', system-ui, sans-serif;
-          color: #e8e8e8;
+          color: #1C1C1C;
         }
 
         .modal {
-          background: linear-gradient(160deg, #2a2a2a 0%, #1f1f1f 100%);
+          background: #F8F6F0;
           border-radius: 18px;
           padding: 28px 30px 26px;
           position: relative;
@@ -119,7 +119,7 @@ class DestinoDetalle extends HTMLElement {
           font-size: 2.1rem;
           font-weight: 600;
           margin: 0 0 10px;
-          color: #fff;
+          color: #1C1C1C;
           line-height: 1.15;
         }
         .tipo-badge {
@@ -166,7 +166,7 @@ class DestinoDetalle extends HTMLElement {
         .desc-bloque h3 {
           font-family: 'Georgia', 'Times New Roman', serif;
           font-size: 1.15rem;
-          color: #fff;
+          color: #393737;
           margin: 0 0 8px;
           display: flex;
           align-items: center;
@@ -176,14 +176,14 @@ class DestinoDetalle extends HTMLElement {
         .desc-bloque p {
           font-size: 14px;
           line-height: 1.6;
-          color: #c8c8c8;
+          color: #4d4b4b;
           margin: 0 0 16px;
         }
 
         .actividades-titulo {
           font-family: 'Georgia', 'Times New Roman', serif;
           font-size: 1.1rem;
-          color: #fff;
+          color: #2e7f75;
           margin: 0 0 8px;
         }
         ul.actividades {
@@ -193,7 +193,7 @@ class DestinoDetalle extends HTMLElement {
         }
         ul.actividades li {
           font-size: 13.5px;
-          color: #c8c8c8;
+          color: #5E5E5E;
           padding: 4px 0 4px 14px;
           position: relative;
           line-height: 1.5;
@@ -243,7 +243,7 @@ class DestinoDetalle extends HTMLElement {
 
         /* ── Audio ── */
         .audio-box {
-          background: rgba(35,40,35,0.6);
+          background: rgba(94, 98, 94, 0.6);
           border: 1px solid rgba(125,216,125,0.18);
           border-radius: 12px;
           padding: 14px 16px 18px;

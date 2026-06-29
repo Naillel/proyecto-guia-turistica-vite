@@ -14,27 +14,27 @@
 
 /* ── VARIABLES DE TEMA ──────────────────────────────────────────── */
 :root {
-  /* Paleta principal (mantengo tonos verdes) */
-  --primary:        #2d6a10;
-  --primary-light:  #4a8e28;
-  --primary-dark:   #1a4208;
-  --accent:         #e8a020;
+  /* Paleta principal */
+  --primary:        #5f3505;  /* Botón principal */
+  --primary-light:  #4CAF50;  /* Verde secundario */
+  --primary-dark:   #E56F00;  /* Hover del botón */
+  --accent:         #00B8A9;  /* Color de acento */
 
-  /* Superficies: oscuro por defecto */
-  --bg-global:      #0b0f12; /* fondo principal */
-  --bg-surface:     #0f1416; /* tarjetas, paneles */
-  --bg-muted:       #0d1311; /* fondos secundarios */
+  /* Superficies (ahora claro) */
+  --bg-global:      #F8F6F0;  /* Fondo principal */
+  --bg-surface:     #FFFFFF;  /* Tarjetas */
+  --bg-muted:       #c7d5dc;  /* fondos secundarios */
 
-  /* Texto */
-  --text-main:      #e6eef8;
-  --text-secondary: #b9c6b6;
-  --text-muted:     #8f9a8f;
+  /* Texto (oscuro, para fondo claro) */
+  --text-main:      #c3bcbc;  /* Texto principal */
+  --text-secondary: #5E5E5E;  /* Texto secundario */
+  --text-muted:     #7A7A7A;  /* texto tenue */
 
-  /* Bordes y sombras */
-  --border-color:   rgba(255,255,255,0.06);
-  --shadow-sm:      0 1px 6px rgba(0,0,0,0.6);
-  --shadow-md:      0 6px 28px rgba(0,0,0,0.7);
-  --shadow-lg:      0 18px 56px rgba(0,0,0,0.75);
+  /* Bordes y sombras (suavizadas para fondo claro) */
+  --border-color:   rgba(0,0,0,0.08);
+  --shadow-sm:      0 1px 6px rgba(0,0,0,0.10);
+  --shadow-md:      0 6px 28px rgba(0,0,0,0.12);
+  --shadow-lg:      0 18px 56px rgba(0,0,0,0.15);
 
   /* Radio */
   --radius-sm:      8px;

@@ -68,20 +68,20 @@
 
       <div class="sandbox-layout">
         <div class="sandbox-card">
-          <span class="sandbox-label">Entorno Aislado: &lt;galeria-imagenes&gt;</span>
+          <span class="sandbox-label">Componente · Galería de imágenes</span>
           <galeria-imagenes id="gal-demo"
             imagenes='[
-              "assets/img/cahuita-1.png",
-              "assets/img/Rio_celeste-1.png",
-              "assets/img/Monteverde-1.png"
+              "assets/img/Quebrada-Gata1.jpeg",
+              "assets/img/Rio_celeste.png",
+              "assets/img/LosQuetzales-1.png"
             ]'>
           </galeria-imagenes>
         </div>
 
-        <div class="sandbox-card">
-          <span class="sandbox-label">Entorno Aislado: &lt;audio-guia&gt;</span>
+        <div class="sandbox-card sandbox-card--audio">
+          <span class="sandbox-label">Componente · Reproductor de audio</span>
           <audio-guia
-            src="assets/audio/cahuita-guia.mp3"
+            src="assets/audio/LasPumas-Guia.mp3"
             label="Audio Guía Demostración · Formato Encapsulado">
           </audio-guia>
         </div>
@@ -277,11 +277,12 @@
     });
 
     /** Cierra el modal de detalle */
-    const cerrarModalDetalle = () => {
-      overlay.classList.remove('visible');
-      document.body.style.overflow = '';
-    };
-
+      const cerrarModalDetalle = () => {
+        overlay.classList.remove('visible');
+        document.body.style.overflow = '';
+        if (detalle) detalle.destino = null;   // ← desmonta el <audio-guia> y lo pausa
+      };
+      
     document.addEventListener('detalle-cerrado', cerrarModalDetalle);
 
     // Cerrar al hacer clic en el fondo del overlay

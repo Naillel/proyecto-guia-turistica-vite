@@ -75,7 +75,7 @@ class AudioGuia extends HTMLElement {
           font-family: 'Segoe UI', system-ui, sans-serif;
         }
         .ag-wrap {
-          background: linear-gradient(135deg, #1a2a1a 0%, #0f1f0f 100%);
+          background: linear-gradient(135deg, #465852 0%, #5d8879 100%);
           border-radius: 14px;
           padding: 14px 16px;
           display: flex;
@@ -98,7 +98,7 @@ class AudioGuia extends HTMLElement {
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #7dd87d;
+          color: #e0dbc9;
         }
         .ag-label {
           font-size: 13px;
@@ -115,9 +115,9 @@ class AudioGuia extends HTMLElement {
           font-weight: 600;
           letter-spacing: 0.07em;
           text-transform: uppercase;
-          color: #5a8a5a;
+          color: #d1e0d1;
         }
-        .ag-status.playing { color: #7dd87d; }
+        .ag-status.playing { color: #95df95; }
         /* ── Controles ── */
         .ag-controls {
           display: flex;
@@ -129,7 +129,7 @@ class AudioGuia extends HTMLElement {
           width: 42px;
           height: 42px;
           border-radius: 50%;
-          background: #5a8a2e;
+          background: #eaa638;
           border: none;
           cursor: pointer;
           display: flex;
@@ -160,7 +160,7 @@ class AudioGuia extends HTMLElement {
         .ag-progress-fill {
           height: 100%;
           border-radius: 99px;
-          background: linear-gradient(to right, #7dd87d, #5a8a2e);
+          background: #7dd87d;
           width: 0%;
           transition: width 0.25s linear;
           pointer-events: none;

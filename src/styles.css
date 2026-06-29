@@ -198,8 +198,10 @@ destino-card.flash {
    ═══════════════════════════════════════════════════════════════ */
 .sandbox-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 460px;     /* ← controla el tamaño;  */
+  margin: 0 auto;       /* las centra en la página */
 }
 
 @media (max-width: 680px) {
@@ -214,9 +216,14 @@ destino-card.flash {
   box-shadow: var(--shadow-sm);
 }
 
+.sandbox-card--audio {
+  align-self: start;   
+}
+
 .sandbox-label {
   display: block;
   font-family: var(--font-ui);
+  grid-template-columns: 1fr; 
   font-size: 0.78rem;
   color: var(--text-muted);
   margin-bottom: 1rem;
@@ -232,7 +239,7 @@ destino-card.flash {
   max-width: 1000px;
   margin: 0 auto;
   padding: 1.5rem;
-  background: rgba(10,12,14,0.6);
+  background: rgba(212, 226, 239, 0.6);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
   border: 1px solid rgba(255,255,255,0.04);

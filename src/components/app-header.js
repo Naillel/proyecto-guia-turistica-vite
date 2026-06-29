@@ -88,7 +88,7 @@ class AppHeader extends HTMLElement {
           gap: 16px;
           flex-wrap: wrap;
           padding: 12px 24px;
-          background: rgba(26, 66, 8, 0.92);
+          background: rgba(8, 66, 61, 0.92);
           backdrop-filter: blur(10px);
           -webkit-backdrop-filter: blur(10px);
           box-shadow: 0 2px 16px rgba(0, 0, 0, 0.22);
